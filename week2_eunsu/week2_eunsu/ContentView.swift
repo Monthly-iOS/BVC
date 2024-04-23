@@ -58,13 +58,13 @@ struct ContentView: View {
                                     
                                     Text(item.lap)
                                         .foregroundStyle(color)
-                                        .font(.lapText)
+                                        .font(.lapListText)
                                     
                                     Spacer()
                                     
                                     Text(item.time)
                                         .foregroundStyle(color)
-                                        .font(.lapText)
+                                        .font(.lapListText)
                                 }
                                 .padding(.horizontal, horizontalMargin)
                             }
