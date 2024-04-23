@@ -36,15 +36,17 @@ struct ContentView: View {
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         
                         HStack {
-                            ButtonView(buttonText: "Lap",
-                                       textColor: .lapButtonTextColor,
-                                       backgroundColor: .lapButtonColor)
+                            LeftButtonView(viewModel: viewModel,
+                                           buttonText: "Lap",
+                                           textColor: .lapButtonTextColor,
+                                           backgroundColor: .lapButtonColor)
                             
                             Spacer()
                             
-                            ButtonView(buttonText: "Start",
-                                       textColor: .startButtonTextColor,
-                                       backgroundColor: .startButtonColor)
+                            RightButtonView(viewModel: viewModel, 
+                                            buttonText: "Start",
+                                            textColor: .startButtonTextColor,
+                                            backgroundColor: .startButtonColor)
                         }
                         .padding(.top, width - verticalMargin / 2)
                     }

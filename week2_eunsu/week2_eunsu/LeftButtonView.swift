@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-//TODO: 버튼 클릭에 따른 색상과 텍스트 변경 필요
 struct LeftButtonView: View {
+    @ObservedObject var viewModel: ViewModel
     let buttonText: String
     let textColor: Color
     let backgroundColor: Color
     
     var body: some View {
         Button {
-            
+            viewModel.leftButtonTapped()
         } label: {
             Text(buttonText)
                 .font(.buttonText)
