@@ -12,6 +12,8 @@
 		9E160F832BD771FC0062A3F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E160F822BD771FC0062A3F3 /* Assets.xcassets */; };
 		9E160F862BD771FC0062A3F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E160F852BD771FC0062A3F3 /* Preview Assets.xcassets */; };
 		9E160F8D2BD773080062A3F3 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F8C2BD773080062A3F3 /* Color+Extension.swift */; };
+		9E160F8F2BD7736A0062A3F3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F8E2BD7736A0062A3F3 /* ClockView.swift */; };
+		9E160F912BD773BF0062A3F3 /* TickShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F902BD773BF0062A3F3 /* TickShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		9E160F822BD771FC0062A3F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E160F852BD771FC0062A3F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9E160F8C2BD773080062A3F3 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		9E160F8E2BD7736A0062A3F3 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		9E160F902BD773BF0062A3F3 /* TickShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 				9E160F7E2BD771FA0062A3F3 /* week2_eunsuApp.swift */,
 				9E160F802BD771FA0062A3F3 /* ContentView.swift */,
 				9E160F8C2BD773080062A3F3 /* Color+Extension.swift */,
+				9E160F8E2BD7736A0062A3F3 /* ClockView.swift */,
+				9E160F902BD773BF0062A3F3 /* TickShape.swift */,
 				9E160F822BD771FC0062A3F3 /* Assets.xcassets */,
 				9E160F842BD771FC0062A3F3 /* Preview Content */,
 			);
@@ -141,7 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E160F812BD771FA0062A3F3 /* ContentView.swift in Sources */,
+				9E160F8F2BD7736A0062A3F3 /* ClockView.swift in Sources */,
 				9E160F8D2BD773080062A3F3 /* Color+Extension.swift in Sources */,
+				9E160F912BD773BF0062A3F3 /* TickShape.swift in Sources */,
 				9E160F7F2BD771FA0062A3F3 /* week2_eunsuApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
