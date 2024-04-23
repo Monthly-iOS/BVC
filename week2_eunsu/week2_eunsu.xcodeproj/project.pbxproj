@@ -14,10 +14,11 @@
 		9E160F8D2BD773080062A3F3 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F8C2BD773080062A3F3 /* Color+Extension.swift */; };
 		9E160F8F2BD7736A0062A3F3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F8E2BD7736A0062A3F3 /* ClockView.swift */; };
 		9E160F912BD773BF0062A3F3 /* TickShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F902BD773BF0062A3F3 /* TickShape.swift */; };
+		9E6DB50C2BD7CCA6001941A0 /* RightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DB50B2BD7CCA6001941A0 /* RightButtonView.swift */; };
 		9EA674572BD7955E005AF9C9 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674562BD7955E005AF9C9 /* NumbersView.swift */; };
 		9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674582BD79C08005AF9C9 /* Font+Extension.swift */; };
 		9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */; };
-		9EA674612BD7A80E005AF9C9 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674602BD7A80E005AF9C9 /* ButtonView.swift */; };
+		9EA674612BD7A80E005AF9C9 /* LeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674602BD7A80E005AF9C9 /* LeftButtonView.swift */; };
 		9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */; };
 		9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */; };
 		9EA674712BD7B5CB005AF9C9 /* LapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674702BD7B5CB005AF9C9 /* LapItem.swift */; };
@@ -34,10 +35,11 @@
 		9E160F8C2BD773080062A3F3 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		9E160F8E2BD7736A0062A3F3 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		9E160F902BD773BF0062A3F3 /* TickShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickShape.swift; sourceTree = "<group>"; };
+		9E6DB50B2BD7CCA6001941A0 /* RightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightButtonView.swift; sourceTree = "<group>"; };
 		9EA674562BD7955E005AF9C9 /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
 		9EA674582BD79C08005AF9C9 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonStyle.swift; sourceTree = "<group>"; };
-		9EA674602BD7A80E005AF9C9 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		9EA674602BD7A80E005AF9C9 /* LeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftButtonView.swift; sourceTree = "<group>"; };
 		9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleView.swift; sourceTree = "<group>"; };
 		9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9EA674702BD7B5CB005AF9C9 /* LapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapItem.swift; sourceTree = "<group>"; };
@@ -83,7 +85,8 @@
 				9EA674582BD79C08005AF9C9 /* Font+Extension.swift */,
 				9E160F8E2BD7736A0062A3F3 /* ClockView.swift */,
 				9EA674562BD7955E005AF9C9 /* NumbersView.swift */,
-				9EA674602BD7A80E005AF9C9 /* ButtonView.swift */,
+				9EA674602BD7A80E005AF9C9 /* LeftButtonView.swift */,
+				9E6DB50B2BD7CCA6001941A0 /* RightButtonView.swift */,
 				9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */,
 				9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */,
 				9E160F902BD773BF0062A3F3 /* TickShape.swift */,
@@ -183,10 +186,11 @@
 				9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */,
 				9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */,
 				9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */,
+				9E6DB50C2BD7CCA6001941A0 /* RightButtonView.swift in Sources */,
 				9E160F7F2BD771FA0062A3F3 /* week2_eunsuApp.swift in Sources */,
 				9EA674732BD7BD24005AF9C9 /* ClockTimerView.swift in Sources */,
 				9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */,
-				9EA674612BD7A80E005AF9C9 /* ButtonView.swift in Sources */,
+				9EA674612BD7A80E005AF9C9 /* LeftButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
