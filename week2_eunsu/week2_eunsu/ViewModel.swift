@@ -10,6 +10,8 @@ import SwiftUI
 class ViewModel: ObservableObject {
     @Published var presenters: [LapItemPresenter] = []
     @Published var currentLapTime: String = "helloo"
+    private var startDate: Date?
+    private var timer: Timer?
     
     init() {
         self.presenters = [
@@ -19,6 +21,8 @@ class ViewModel: ObservableObject {
             LapItemPresenter(lap: "Lap 4", time: "00:05,17", type: .worst),
             LapItemPresenter(lap: "Lap 5", time: "00:04,24", type: .normal)
         ]
+        
+        updateCurrentLapTime()
     }
     
     func getNumbers(count: Int) -> [Int] {
@@ -49,10 +53,27 @@ class ViewModel: ObservableObject {
     }
     
     func rightButtonTapped() {
-        
+        startDate = Date()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] (_) in
+            self?.updateCurrentLapTime()
+        })
     }
     
     private func updateCurrentLapTime() {
+        var timeElapsed: TimeInterval = 0
         
+        guard let startDate = startDate else { return }
+        
+        timeElapsed = Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
+        
+        let minutes: Int = Int(timeElapsed / 60)
+        timeElapsed -= Double(minutes) * 60
+        
+        let seconds: Int = Int(timeElapsed)
+        timeElapsed -= Double(seconds)
+        
+        let milliseconds = Int(timeElapsed * 100)
+        
+        currentLapTime = String(format: "%02d:%02d.%02d", minutes, seconds, milliseconds)
     }
 }
