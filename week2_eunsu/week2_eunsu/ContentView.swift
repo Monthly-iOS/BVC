@@ -10,9 +10,6 @@ import SwiftUI
 struct ContentView: View {
     private let horizontalMargin: CGFloat = 20
     private let verticalMargin: CGFloat = 10
-    private let tickHeight: CGFloat = 8
-    private let longTickHeight: CGFloat = 12
-    private let tickWidth: CGFloat = 2
     private let numberPadding: CGFloat = 40
     
     var body: some View {
