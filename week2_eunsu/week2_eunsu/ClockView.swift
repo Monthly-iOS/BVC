@@ -8,7 +8,24 @@
 import SwiftUI
 
 struct ClockView: View {
+    let count: Int
+    let longDivider: Int
+    let longTickHeigh: CGFloat
+    let tickHeight: CGFloat
+    let tickWidth: CGFloat
+    
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        let degree = Double.pi * 2 / Double(count)
+        
+        ZStack {
+            ForEach(0..<count, id: \.self) { index in
+                let height = (index % longDivider == 0) ? longTickHeigh : tickHeight
+                
+                TickShape(tickShape: height)
+                    .stroke(lineWidth: tickWidth)
+                    .rotationEffect(.radians(degree * Double(index)))
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
