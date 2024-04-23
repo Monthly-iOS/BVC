@@ -26,7 +26,10 @@ struct ContentView: View {
                               longDivider: 4,
                               longTickHeigh: longTickHeight,
                               tickHeight: tickHeight,
-                              tickWidth: tickWidth)
+                              tickWidth: tickWidth,
+                              highlightedColorDivider: 20,
+                              highlightedColor: .clockHighlightedcolor,
+                              normalColor: .clockNormalColor)
                     .frame(width: width, height: width)
                 }
                 .padding(.horizontal, marginHorizontal)
