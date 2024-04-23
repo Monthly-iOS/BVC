@@ -5,7 +5,7 @@
 //  Created by Eunsu JEONG on 4/23/24.
 //
 
-import Foundation
+import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var presenters: [LapItemPresenter] = []
@@ -18,5 +18,16 @@ class ViewModel: ObservableObject {
             LapItemPresenter(lap: "Lap 4", time: "00:05,17", type: .worst),
             LapItemPresenter(lap: "Lap 5", time: "00:04,24", type: .normal)
         ]
+    }
+    
+    func getLapTextColor(_ type: LapType) -> Color {
+        switch type {
+        case .normal:
+            return .lapTypeNormalTextColor
+        case .best:
+            return .lapTypeBestTextColor
+        case .worst:
+            return .lapTypeWorstTextColor
+        }
     }
 }
