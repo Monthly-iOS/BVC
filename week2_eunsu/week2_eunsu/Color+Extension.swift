@@ -21,4 +21,8 @@ extension Color {
     static let restartButtonColor = Color.gray
     static let restartButtonTextColor = Color.white
     static let needleNormalColor = Color.orange
+    static let lapTypeNormalTextColor = Color.white
+    static let lapTypeBestTextColor = Color.green
+    static let lapTypeWorstTextColor = Color.red
+    static let lapCellDividerColor = Color.green.opacity(0.4)
 }

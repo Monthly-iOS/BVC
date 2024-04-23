@@ -10,4 +10,5 @@ import SwiftUI
 extension Font {
     static let clockText: Font = .system(size: 35, weight: .regular, design: .default)
     static let buttonText: Font = .system(size: 20, weight: .regular, design: .default)
+    static let lapText: Font = .system(size: 17, weight: .regular, design: .default)
 }
