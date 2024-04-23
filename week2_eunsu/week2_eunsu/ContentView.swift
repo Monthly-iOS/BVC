@@ -11,6 +11,7 @@ struct ContentView: View {
     private let horizontalMargin: CGFloat = 20
     private let verticalMargin: CGFloat = 60
     private let numberPadding: CGFloat = 40
+    private let viewModel: ViewModel = ViewModel()
     @State var tabIndex = 0
     
     var body: some View {
@@ -21,22 +22,16 @@ struct ContentView: View {
                 let width = geo.size.width - (horizontalMargin * 2)
                 let numberWidth = width - numberPadding
                 
-                ZStack {
-                    TabView(selection: $tabIndex) {
-                        ClockTimerView(width: width, numberWidth: numberWidth)
-                            .padding(.horizontal, horizontalMargin)
-                            .padding(.top, -verticalMargin)
-                        
-                        NumberTimerView()
-                    }
-                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    
-                    HStack {
-                        ButtonView(buttonText: "Lap",
-                                   textColor: .lapButtonTextColor,
-                                   backgroundColor: .lapButtonColor)
-                        
-                        Spacer()
+                VStack {
+                    ZStack {
+                        TabView(selection: $tabIndex) {
+                            ClockTimerView(width: width, numberWidth: numberWidth)
+                                .padding(.horizontal, horizontalMargin)
+                                .padding(.top, -verticalMargin)
+                            
+                            NumberTimerView()
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         
                         ButtonView(buttonText: "Start",
                                    textColor: .startButtonTextColor,
