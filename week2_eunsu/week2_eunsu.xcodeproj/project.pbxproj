@@ -19,6 +19,8 @@
 		9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */; };
 		9EA674612BD7A80E005AF9C9 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674602BD7A80E005AF9C9 /* ButtonView.swift */; };
 		9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */; };
+		9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */; };
+		9EA674712BD7B5CB005AF9C9 /* LapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674702BD7B5CB005AF9C9 /* LapItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonStyle.swift; sourceTree = "<group>"; };
 		9EA674602BD7A80E005AF9C9 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleView.swift; sourceTree = "<group>"; };
+		9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9EA674702BD7B5CB005AF9C9 /* LapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 				9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */,
 				9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */,
 				9E160F902BD773BF0062A3F3 /* TickShape.swift */,
+				9EA674702BD7B5CB005AF9C9 /* LapItem.swift */,
+				9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */,
 				9E160F822BD771FC0062A3F3 /* Assets.xcassets */,
 				9E160F842BD771FC0062A3F3 /* Preview Content */,
 			);
@@ -161,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EA674712BD7B5CB005AF9C9 /* LapItem.swift in Sources */,
 				9E160F812BD771FA0062A3F3 /* ContentView.swift in Sources */,
 				9E160F8F2BD7736A0062A3F3 /* ClockView.swift in Sources */,
 				9E160F8D2BD773080062A3F3 /* Color+Extension.swift in Sources */,
@@ -170,6 +177,7 @@
 				9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */,
 				9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */,
 				9E160F7F2BD771FA0062A3F3 /* week2_eunsuApp.swift in Sources */,
+				9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */,
 				9EA674612BD7A80E005AF9C9 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
