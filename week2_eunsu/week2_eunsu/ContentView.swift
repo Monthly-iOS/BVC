@@ -49,10 +49,25 @@ struct ContentView: View {
                     
                     List {
                         ForEach(viewModel.presenters) { item in
-                            VStack(alignment: .leading, spacing: 12, content: {
+                            VStack(alignment: .leading, spacing: 12) {
                                 Color.lapCellDividerColor
                                     .frame(width: geo.size.width, height: 1)
-                            })
+                                
+                                HStack() {
+                                    let color = viewModel.getLapTextColor(item.type)
+                                    
+                                    Text(item.lap)
+                                        .foregroundStyle(color)
+                                        .font(.lapText)
+                                    
+                                    Spacer()
+                                    
+                                    Text(item.time)
+                                        .foregroundStyle(color)
+                                        .font(.lapText)
+                                }
+                                .padding(.horizontal, horizontalMargin)
+                            }
                         }
                     }
                 }
