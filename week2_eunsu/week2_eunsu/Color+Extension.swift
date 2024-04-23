@@ -24,5 +24,5 @@ extension Color {
     static let lapTypeNormalTextColor = Color.white
     static let lapTypeBestTextColor = Color.green
     static let lapTypeWorstTextColor = Color.red
-    static let lapCellDividerColor = Color.green.opacity(0.4)
+    static let lapCellDividerColor = Color.gray.opacity(0.4)
 }
