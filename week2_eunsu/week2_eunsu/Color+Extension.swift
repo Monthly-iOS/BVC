@@ -20,4 +20,5 @@ extension Color {
     static let lapButtonTextColor = Color.gray
     static let restartButtonColor = Color.gray
     static let restartButtonTextColor = Color.white
+    static let normalNeedleColor = Color.orange
 }
