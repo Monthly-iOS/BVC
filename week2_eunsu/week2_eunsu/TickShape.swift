@@ -14,7 +14,7 @@ struct TickShape: Shape {
         var path = Path()
         
         path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY + self.tickShape))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY + tickShape))
         
         return path
     }
