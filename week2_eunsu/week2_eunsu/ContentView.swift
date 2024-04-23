@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var viewModel: ViewModel = ViewModel()
     private let horizontalMargin: CGFloat = 20
     private let verticalMargin: CGFloat = 60
     private let numberPadding: CGFloat = 40
-    private let viewModel: ViewModel = ViewModel()
     @State private var tabIndex = 0
     
     var body: some View {
