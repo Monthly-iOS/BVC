@@ -11,6 +11,7 @@ struct ContentView: View {
     private let horizontalMargin: CGFloat = 20
     private let verticalMargin: CGFloat = 60
     private let numberPadding: CGFloat = 40
+    @State var tabIndex = 0
     
     var body: some View {
         ZStack {
