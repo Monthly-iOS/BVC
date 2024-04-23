@@ -43,4 +43,16 @@ class ViewModel: ObservableObject {
             return .lapTypeWorstTextColor
         }
     }
+    
+    func leftButtonTapped() {
+        
+    }
+    
+    func rightButtonTapped() {
+        
+    }
+    
+    private func updateCurrentLapTime() {
+        
+    }
 }
