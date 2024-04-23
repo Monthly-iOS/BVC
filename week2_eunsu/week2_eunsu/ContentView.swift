@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let marginHorizontal: CGFloat = 14.5
-    private let marginVertical: CGFloat = 13
+    private let horizontalMargin: CGFloat = 20
+    private let verticalMargin: CGFloat = 10
     private let tickHeight: CGFloat = 8
     private let longTickHeight: CGFloat = 12
     private let tickWidth: CGFloat = 2
