@@ -17,30 +17,18 @@ struct ContentView: View {
             Color.backgroundColor.ignoresSafeArea()
             
             GeometryReader { geo in
+                let width = geo.size.width - (horizontalMargin * 2)
+                let numberWidth = width - numberPadding
+                
                 ZStack {
-                    let width = geo.size.width - (horizontalMargin * 2)
-                    let numberWidth = width - numberPadding
-                    
-                    ClockView(count: 240,
-                              longDivider: 4,
-                              longTickHeigh: longTickHeight,
-                              tickHeight: tickHeight,
-                              tickWidth: tickWidth,
-                              highlightedColorDivider: 20,
-                              highlightedColor: .clockHighlightedcolor,
-                              normalColor: .clockNormalColor)
-                    .frame(width: width, height: width)
-                    
-                    NumbersView(numbers: getNumbers(count: 12),
-                                font: .clockText,
-                                textColor: .clockTextColor)
-                    .frame(width: numberWidth, height: numberWidth)
-                    
-                    NeedleView(width: 8,
-                               height: width,
-                               color: .needleNormalColor,
-                               bottomLineHeight: 30)
-                    .rotationEffect(.radians(Double.pi / 2))
+                    TabView(selection: $tabIndex) {
+                        ClockTimerView(width: width, numberWidth: numberWidth)
+                            .padding(.horizontal, horizontalMargin)
+                            .padding(.top, -verticalMargin)
+                        
+                        NumberTimerView()
+                    }
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 }
                 .padding(.horizontal, horizontalMargin)
                 .padding(.top, verticalMargin)
