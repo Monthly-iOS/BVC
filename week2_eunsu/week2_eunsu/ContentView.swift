@@ -37,7 +37,7 @@ struct ContentView: View {
                     NumbersView(numbers: getNumbers(count: 12),
                                 font: .clockText,
                                 textColor: .clockTextColor)
-                        .frame(width: numberWidth, height: numberWidth)
+                    .frame(width: numberWidth, height: numberWidth)
                 }
                 .padding(.horizontal, marginHorizontal)
                 .padding(.top, marginVertical)
