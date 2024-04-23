@@ -21,6 +21,8 @@
 		9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */; };
 		9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */; };
 		9EA674712BD7B5CB005AF9C9 /* LapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674702BD7B5CB005AF9C9 /* LapItem.swift */; };
+		9EA674732BD7BD24005AF9C9 /* ClockTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674722BD7BD24005AF9C9 /* ClockTimerView.swift */; };
+		9EA674752BD7BDFB005AF9C9 /* NumberTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674742BD7BDFB005AF9C9 /* NumberTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleView.swift; sourceTree = "<group>"; };
 		9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9EA674702BD7B5CB005AF9C9 /* LapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapItem.swift; sourceTree = "<group>"; };
+		9EA674722BD7BD24005AF9C9 /* ClockTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimerView.swift; sourceTree = "<group>"; };
+		9EA674742BD7BDFB005AF9C9 /* NumberTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				9E160F7E2BD771FA0062A3F3 /* week2_eunsuApp.swift */,
 				9E160F802BD771FA0062A3F3 /* ContentView.swift */,
+				9EA674722BD7BD24005AF9C9 /* ClockTimerView.swift */,
+				9EA674742BD7BDFB005AF9C9 /* NumberTimerView.swift */,
 				9E160F8C2BD773080062A3F3 /* Color+Extension.swift */,
 				9EA674582BD79C08005AF9C9 /* Font+Extension.swift */,
 				9E160F8E2BD7736A0062A3F3 /* ClockView.swift */,
@@ -172,11 +178,13 @@
 				9E160F8F2BD7736A0062A3F3 /* ClockView.swift in Sources */,
 				9E160F8D2BD773080062A3F3 /* Color+Extension.swift in Sources */,
 				9EA674572BD7955E005AF9C9 /* NumbersView.swift in Sources */,
+				9EA674752BD7BDFB005AF9C9 /* NumberTimerView.swift in Sources */,
 				9E160F912BD773BF0062A3F3 /* TickShape.swift in Sources */,
 				9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */,
 				9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */,
 				9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */,
 				9E160F7F2BD771FA0062A3F3 /* week2_eunsuApp.swift in Sources */,
+				9EA674732BD7BD24005AF9C9 /* ClockTimerView.swift in Sources */,
 				9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */,
 				9EA674612BD7A80E005AF9C9 /* ButtonView.swift in Sources */,
 			);
