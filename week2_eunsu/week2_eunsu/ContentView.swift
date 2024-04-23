@@ -33,11 +33,28 @@ struct ContentView: View {
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         
-                        ButtonView(buttonText: "Start",
-                                   textColor: .startButtonTextColor,
-                                   backgroundColor: .startButtonColor)
+                        HStack {
+                            ButtonView(buttonText: "Lap",
+                                       textColor: .lapButtonTextColor,
+                                       backgroundColor: .lapButtonColor)
+                            
+                            Spacer()
+                            
+                            ButtonView(buttonText: "Start",
+                                       textColor: .startButtonTextColor,
+                                       backgroundColor: .startButtonColor)
+                        }
+                        .padding(.top, width - verticalMargin / 2)
                     }
-                    .padding(.top, width - verticalMargin / 2)
+                    
+                    List {
+                        ForEach(viewModel.presenters) { item in
+                            VStack(alignment: .leading, spacing: 12, content: {
+                                Color.lapCellDividerColor
+                                    .frame(width: geo.size.width, height: 1)
+                            })
+                        }
+                    }
                 }
             }
         }
