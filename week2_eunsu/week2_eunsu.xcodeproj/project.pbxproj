@@ -18,6 +18,7 @@
 		9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674582BD79C08005AF9C9 /* Font+Extension.swift */; };
 		9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */; };
 		9EA674612BD7A80E005AF9C9 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674602BD7A80E005AF9C9 /* ButtonView.swift */; };
+		9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9EA674582BD79C08005AF9C9 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonStyle.swift; sourceTree = "<group>"; };
 		9EA674602BD7A80E005AF9C9 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				9E160F8E2BD7736A0062A3F3 /* ClockView.swift */,
 				9EA674562BD7955E005AF9C9 /* NumbersView.swift */,
 				9EA674602BD7A80E005AF9C9 /* ButtonView.swift */,
+				9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */,
 				9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */,
 				9E160F902BD773BF0062A3F3 /* TickShape.swift */,
 				9E160F822BD771FC0062A3F3 /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 				9E160F912BD773BF0062A3F3 /* TickShape.swift in Sources */,
 				9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */,
 				9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */,
+				9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */,
 				9E160F7F2BD771FA0062A3F3 /* week2_eunsuApp.swift in Sources */,
 				9EA674612BD7A80E005AF9C9 /* ButtonView.swift in Sources */,
 			);
