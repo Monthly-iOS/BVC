@@ -41,7 +41,7 @@ struct ContentView: View {
                     
                     NeedleView(width: 8,
                                height: width,
-                               color: .normalNeedleColor,
+                               color: .needleNormalColor,
                                bottomLineHeight: 30)
                     .rotationEffect(.radians(Double.pi / 2))
                 }
