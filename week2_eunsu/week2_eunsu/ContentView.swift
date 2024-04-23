@@ -8,14 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let marginHorizontal: CGFloat = 14.5
+    private let marginVertical: CGFloat = 13
+    private let tickHeight: CGFloat = 8
+    private let longTickHeight: CGFloat = 12
+    private let tickWidth: CGFloat = 2
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.backgroundColor.ignoresSafeArea()
+            
+            GeometryReader { geo in
+                ZStack {
+                    let width = geo.size.width - (marginHorizontal * 2)
+                    
+                    ClockView(count: 240,
+                              longDivider: 4,
+                              longTickHeigh: longTickHeight,
+                              tickHeight: tickHeight,
+                              tickWidth: tickWidth)
+                    .frame(width: width, height: width)
+                }
+                .padding(.horizontal, marginHorizontal)
+                .padding(.top, marginVertical)
+            }
         }
-        .padding()
     }
 }
 
