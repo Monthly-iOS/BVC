@@ -38,6 +38,12 @@ struct ContentView: View {
                                 font: .clockText,
                                 textColor: .clockTextColor)
                     .frame(width: numberWidth, height: numberWidth)
+                    
+                    NeedleView(width: 8,
+                               height: width,
+                               color: .normalNeedleColor,
+                               bottomLineHeight: 30)
+                    .rotationEffect(.radians(Double.pi / 2))
                 }
                 .padding(.horizontal, horizontalMargin)
                 .padding(.top, verticalMargin)
