@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ClockTimerView: View {
+    @ObservedObject var viewModel: ViewModel
     let width: CGFloat
     let numberWidth: CGFloat
     private let tickHeight: CGFloat = 8

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var viewModel: ViewModel = ViewModel()
+    @StateObject private var viewModel: ViewModel = ViewModel()
     private let horizontalMargin: CGFloat = 20
     private let verticalMargin: CGFloat = 60
     private let numberPadding: CGFloat = 40
@@ -25,7 +25,9 @@ struct ContentView: View {
                 VStack {
                     ZStack {
                         TabView(selection: $tabIndex) {
-                            ClockTimerView(width: width, numberWidth: numberWidth)
+                            ClockTimerView(viewModel: viewModel,
+                                           width: width,
+                                           numberWidth: numberWidth)
                                 .padding(.horizontal, horizontalMargin)
                                 .padding(.top, -verticalMargin)
                             
