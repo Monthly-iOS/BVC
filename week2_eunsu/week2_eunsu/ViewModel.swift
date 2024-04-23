@@ -9,17 +9,17 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var presenters: [LapItemPresenter] = []
-    @Published var currentLapTime: String = "helloo"
+    @Published var currentLapTime: String = "00:00.00"
     private var startDate: Date?
     private var timer: Timer?
     
     init() {
-        self.presenters = [
-            LapItemPresenter(lap: "Lap 1", time: "00:02,85", type: .normal),
-            LapItemPresenter(lap: "Lap 2", time: "00:03,32", type: .normal),
-            LapItemPresenter(lap: "Lap 3", time: "00:01,80", type: .best),
-            LapItemPresenter(lap: "Lap 4", time: "00:05,17", type: .worst),
-            LapItemPresenter(lap: "Lap 5", time: "00:04,24", type: .normal)
+        presenters = [
+            LapItemPresenter(lap: "Lap 1", time: "00:02.85", type: .normal),
+            LapItemPresenter(lap: "Lap 2", time: "00:03.32", type: .normal),
+            LapItemPresenter(lap: "Lap 3", time: "00:01.80", type: .best),
+            LapItemPresenter(lap: "Lap 4", time: "00:05.17", type: .worst),
+            LapItemPresenter(lap: "Lap 5", time: "00:04.24", type: .normal)
         ]
         
         updateCurrentLapTime()
