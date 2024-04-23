@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     private let horizontalMargin: CGFloat = 20
-    private let verticalMargin: CGFloat = 10
+    private let verticalMargin: CGFloat = 60
     private let numberPadding: CGFloat = 40
     
     var body: some View {
@@ -29,22 +29,19 @@ struct ContentView: View {
                         NumberTimerView()
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                }
-                .padding(.horizontal, horizontalMargin)
-                .padding(.top, verticalMargin)
-            }
-            
-            VStack {
-                HStack {
-                    ButtonView(buttonText: "Lap",
-                               textColor: .lapButtonTextColor,
-                               backgroundColor: .lapButtonColor)
                     
-                    Spacer()
-                    
-                    ButtonView(buttonText: "Start",
-                               textColor: .startButtonTextColor,
-                               backgroundColor: .startButtonColor)
+                    HStack {
+                        ButtonView(buttonText: "Lap",
+                                   textColor: .lapButtonTextColor,
+                                   backgroundColor: .lapButtonColor)
+                        
+                        Spacer()
+                        
+                        ButtonView(buttonText: "Start",
+                                   textColor: .startButtonTextColor,
+                                   backgroundColor: .startButtonColor)
+                    }
+                    .padding(.top, width - verticalMargin / 2)
                 }
             }
         }
