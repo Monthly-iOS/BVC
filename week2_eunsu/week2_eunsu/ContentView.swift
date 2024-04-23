@@ -13,6 +13,7 @@ struct ContentView: View {
     private let tickHeight: CGFloat = 8
     private let longTickHeight: CGFloat = 12
     private let tickWidth: CGFloat = 2
+    private let numberPadding: CGFloat = 40
     
     var body: some View {
         ZStack {
@@ -21,6 +22,7 @@ struct ContentView: View {
             GeometryReader { geo in
                 ZStack {
                     let width = geo.size.width - (marginHorizontal * 2)
+                    let numberWidth = width - numberPadding
                     
                     ClockView(count: 240,
                               longDivider: 4,
@@ -31,6 +33,11 @@ struct ContentView: View {
                               highlightedColor: .clockHighlightedcolor,
                               normalColor: .clockNormalColor)
                     .frame(width: width, height: width)
+                    
+                    NumbersView(numbers: getNumbers(count: 12),
+                                font: .clockText,
+                                textColor: .clockTextColor)
+                        .frame(width: numberWidth, height: numberWidth)
                 }
                 .padding(.horizontal, marginHorizontal)
                 .padding(.top, marginVertical)
