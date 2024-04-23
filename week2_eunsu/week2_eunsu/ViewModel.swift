@@ -9,6 +9,7 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var presenters: [LapItemPresenter] = []
+    @Published var currentLapTime: String = "helloo"
     
     init() {
         self.presenters = [
