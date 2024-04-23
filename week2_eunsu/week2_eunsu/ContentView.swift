@@ -12,7 +12,7 @@ struct ContentView: View {
     private let verticalMargin: CGFloat = 60
     private let numberPadding: CGFloat = 40
     private let viewModel: ViewModel = ViewModel()
-    @State var tabIndex = 0
+    @State private var tabIndex = 0
     
     var body: some View {
         ZStack {
