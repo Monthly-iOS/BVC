@@ -27,7 +27,7 @@ struct ClockTimerView: View {
                       normalColor: .clockNormalColor)
             .frame(width: width, height: width)
             
-            NumbersView(numbers: getNumbers(count: 12),
+            NumbersView(numbers: viewModel.getNumbers(count: 12),
                         font: .clockText,
                         textColor: .clockTextColor)
             .frame(width: numberWidth, height: numberWidth)
@@ -38,17 +38,5 @@ struct ClockTimerView: View {
                        bottomLineHeight: 30)
             .rotationEffect(.radians(Double.pi / 2))
         }
-    }
-    
-    private func getNumbers(count: Int) -> [Int] {
-        var numbers: [Int] = []
-        
-        numbers.append(count * 5)
-        
-        for index in 1..<count {
-            numbers.append(index * 5)
-        }
-        
-        return numbers
     }
 }

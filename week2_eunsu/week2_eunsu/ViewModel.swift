@@ -20,6 +20,18 @@ class ViewModel: ObservableObject {
         ]
     }
     
+    func getNumbers(count: Int) -> [Int] {
+        var numbers: [Int] = []
+        
+        numbers.append(count * 5)
+        
+        for index in 1..<count {
+            numbers.append(index * 5)
+        }
+        
+        return numbers
+    }
+    
     func getLapTextColor(_ type: LapType) -> Color {
         switch type {
         case .normal:
