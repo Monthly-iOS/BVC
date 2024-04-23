@@ -42,6 +42,20 @@ struct ContentView: View {
                 .padding(.horizontal, horizontalMargin)
                 .padding(.top, verticalMargin)
             }
+            
+            VStack {
+                HStack {
+                    ButtonView(buttonText: "Lap",
+                               textColor: .lapButtonTextColor,
+                               backgroundColor: .lapButtonColor)
+                    
+                    Spacer()
+                    
+                    ButtonView(buttonText: "Start",
+                               textColor: .startButtonTextColor,
+                               backgroundColor: .startButtonColor)
+                }
+            }
         }
     }
     
