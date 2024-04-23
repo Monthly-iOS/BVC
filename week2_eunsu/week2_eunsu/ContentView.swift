@@ -21,7 +21,7 @@ struct ContentView: View {
             
             GeometryReader { geo in
                 ZStack {
-                    let width = geo.size.width - (marginHorizontal * 2)
+                    let width = geo.size.width - (horizontalMargin * 2)
                     let numberWidth = width - numberPadding
                     
                     ClockView(count: 240,
@@ -39,8 +39,8 @@ struct ContentView: View {
                                 textColor: .clockTextColor)
                     .frame(width: numberWidth, height: numberWidth)
                 }
-                .padding(.horizontal, marginHorizontal)
-                .padding(.top, marginVertical)
+                .padding(.horizontal, horizontalMargin)
+                .padding(.top, verticalMargin)
             }
         }
     }
