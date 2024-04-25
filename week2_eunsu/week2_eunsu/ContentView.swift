@@ -12,7 +12,6 @@ struct ContentView: View {
     private let horizontalMargin: CGFloat = 20
     private let verticalMargin: CGFloat = 60
     private let numberPadding: CGFloat = 40
-    @State private var tabIndex = 0
     
     var body: some View {
         ZStack {
@@ -24,14 +23,14 @@ struct ContentView: View {
                 
                 VStack {
                     ZStack {
-                        TabView(selection: $tabIndex) {
+                        TabView() {
                             ClockTimerView(viewModel: viewModel,
                                            width: width,
                                            numberWidth: numberWidth)
                                 .padding(.horizontal, horizontalMargin)
                                 .padding(.top, -verticalMargin)
                             
-                            NumberTimerView()
+                            NumberTimerView(viewModel: viewModel)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         

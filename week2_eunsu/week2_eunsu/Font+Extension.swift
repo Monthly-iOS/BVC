@@ -12,4 +12,5 @@ extension Font {
     static let buttonText: Font = .system(size: 20, weight: .regular, design: .default)
     static let lapListText: Font = .system(size: 17, weight: .regular, design: .default)
     static let lapClockText: Font = .system(size: 22, weight: .light, design: .default)
+    static let numberTimerText: Font = .system(size: 90, weight: .light, design: .default)
 }

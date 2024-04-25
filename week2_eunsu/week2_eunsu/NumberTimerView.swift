@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct NumberTimerView: View {
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        VStack {
+            Text(viewModel.currentLapTime)
+                .foregroundStyle(Color.clockTextColor)
+                .font(.numberTimerText)
+        }
+        .padding(.bottom, 40)
     }
 }
 
