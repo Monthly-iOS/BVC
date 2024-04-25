@@ -10,6 +10,7 @@ import SwiftUI
 class ViewModel: ObservableObject {
     @Published var presenters: [LapItemPresenter] = []
     @Published var currentLapTime: String = "00:00.00"
+    @Published var isLapStarted: Bool = false
     private var startDate: Date?
     private var timer: Timer?
     

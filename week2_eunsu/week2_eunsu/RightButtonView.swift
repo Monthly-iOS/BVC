@@ -9,19 +9,17 @@ import SwiftUI
 
 struct RightButtonView: View {
     @ObservedObject var viewModel: ViewModel
-    let buttonText: String
-    let textColor: Color
-    let backgroundColor: Color
     
     var body: some View {
         Button {
             viewModel.rightButtonTapped()
         } label: {
-            Text(buttonText)
+            Text(viewModel.isLapStarted ? "Stop" : "Start")
                 .font(.buttonText)
         }
-        .buttonStyle(ActionButtonStyle(textColor: textColor,
-                                       backgroundColor: backgroundColor))
+        .buttonStyle(ActionButtonStyle(
+            textColor: viewModel.isLapStarted ? .endButtonTextColor : .startButtonTextColor,
+            backgroundColor: viewModel.isLapStarted ? .endButtonColor : .startButtonColor))
     }
 
 }
