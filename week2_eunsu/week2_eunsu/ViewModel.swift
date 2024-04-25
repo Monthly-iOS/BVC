@@ -56,7 +56,7 @@ class ViewModel: ObservableObject {
     ///타이머를 시작 또는 중지시킴: 기존 랩의 시간을 업데이트
     func rightButtonTapped() {
         if isLapStarted {
-            lapTimes[lapIndex] += getTimeElapsed()
+            updateTimes()
             timer?.invalidate() //메모리에서 타이머를 삭제
         } else {
             startDate = Date()
@@ -89,6 +89,13 @@ class ViewModel: ObservableObject {
         lapIndex = 0
         currentLapTime = getFormattedString(0)
         totalTimeElapsed = 0
+    }
+    
+    ///총 측정 시간과 lapTimes의 현재 랩타임 값을 업데이트
+    private func updateTimes() {
+        let timeElapsed = getTimeElapsed()
+        totalTimeElapsed += timeElapsed
+        lapTimes[lapIndex] += timeElapsed
     }
     
     ///기존 랩 시간에 재시작 시간으로부터 시간이 얼마나 흘렀는지 계산한 값을 더해 랩을 업데이트
