@@ -10,10 +10,10 @@ import SwiftUI
 struct ClockTimerView: View {
     @ObservedObject var viewModel: ViewModel
     let width: CGFloat
-    let numberWidth: CGFloat
     private let tickHeight: CGFloat = 8
     private let longTickHeight: CGFloat = 12
     private let tickWidth: CGFloat = 2
+    private let numberPadding: CGFloat = 40
     private let miniTickHeight: CGFloat = 6
     private let miniLongTickHeight: CGFloat = 9
     private let miniNumberPadding: CGFloat = 24
@@ -22,6 +22,8 @@ struct ClockTimerView: View {
         let miniWidth = width * 0.28
         let miniExtraMarginFromBottom = width * 0.07
         let miniNumberWidth = miniWidth - miniNumberPadding
+        let numberWidth = width - numberPadding
+        
         ZStack {
             //MARK: Mini Clock
             ClockView(count: 48,

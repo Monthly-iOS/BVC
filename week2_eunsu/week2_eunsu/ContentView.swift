@@ -11,7 +11,6 @@ struct ContentView: View {
     @StateObject private var viewModel: ViewModel = ViewModel()
     private let horizontalMargin: CGFloat = 20
     private let verticalMargin: CGFloat = 60
-    private let numberPadding: CGFloat = 40
     
     var body: some View {
         ZStack {
@@ -19,14 +18,12 @@ struct ContentView: View {
             
             GeometryReader { geo in
                 let width = geo.size.width - (horizontalMargin * 2)
-                let numberWidth = width - numberPadding
                 
                 VStack {
                     ZStack {
                         TabView() {
                             ClockTimerView(viewModel: viewModel,
-                                           width: width,
-                                           numberWidth: numberWidth)
+                                           width: width)
                                 .padding(.horizontal, horizontalMargin)
                                 .padding(.top, -verticalMargin)
                             
