@@ -42,10 +42,7 @@ struct ContentView: View {
                             
                             Spacer()
                             
-                            RightButtonView(viewModel: viewModel, 
-                                            buttonText: "Start",
-                                            textColor: .startButtonTextColor,
-                                            backgroundColor: .startButtonColor)
+                            RightButtonView(viewModel: viewModel)
                         }
                         .padding(.top, width - verticalMargin / 2)
                     }
