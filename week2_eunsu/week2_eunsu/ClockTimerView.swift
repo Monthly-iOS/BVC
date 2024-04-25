@@ -37,6 +37,14 @@ struct ClockTimerView: View {
                 .foregroundStyle(Color.clockTextColor)
                 .padding(.top, width * 0.36)
             
+            if let currentLapDegree: Double = viewModel.currentLapDegree {
+                NeedleView(width: 8,
+                           height: width,
+                           color: .needleCurrentLapColor,
+                           bottomLineHeight: 30)
+                .rotationEffect(.radians(currentLapDegree))
+            }
+            
             NeedleView(width: 8,
                        height: width,
                        color: .needleNormalColor,
