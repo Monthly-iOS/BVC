@@ -69,12 +69,15 @@ class ViewModel: ObservableObject {
         if isLapStarted {
             updateTimes()
             timer?.invalidate() //메모리에서 타이머를 삭제
+            leftButtonType = .reset
         } else {
             startDate = Date()
             updateRecords()
             timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] (_) in
                 self?.updateCurrentLapTime()
             }
+            
+            leftButtonType = .lapActive
         }
         
         isLapStarted.toggle()
