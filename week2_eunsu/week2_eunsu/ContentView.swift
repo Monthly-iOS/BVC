@@ -9,27 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel: ViewModel = ViewModel()
-    private let horizontalMargin: CGFloat = 20
-    private let verticalMargin: CGFloat = 60
+    private let horizontalMargin: CGFloat = 40
+    private let verticalMargin: CGFloat = 48
     
     var body: some View {
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
             
             GeometryReader { geo in
-                let width = geo.size.width - (horizontalMargin * 2)
+                let width = geo.size.width - (horizontalMargin * 0.8)
                 
                 VStack {
                     ZStack {
                         TabView() {
-                            NumberTimerView(viewModel: viewModel)
+//                            NumberTimerView(viewModel: viewModel)
                             
                             ClockTimerView(viewModel: viewModel,
                                            width: width)
-                                .padding(.horizontal, horizontalMargin)
-                                .padding(.top, -verticalMargin)
-                            
-                            NumberTimerView(viewModel: viewModel)
+                            .padding(.top, -verticalMargin)
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         
@@ -40,15 +37,16 @@ struct ContentView: View {
                             
                             RightButtonView(viewModel: viewModel)
                         }
-                        .padding(.top, width - verticalMargin / 2)
+                        .padding(.top, width - verticalMargin * 0.4)
+                        .padding(.horizontal, horizontalMargin / 10)
                     }
+                    
+                    Color.lapCellDividerColor
+                        .frame(width: width, height: 1)
                     
                     List {
                         ForEach(viewModel.lapRecords) { item in
                             VStack(alignment: .leading, spacing: 12) {
-                                Color.lapCellDividerColor
-                                    .frame(width: geo.size.width, height: 1)
-                                
                                 HStack() {
                                     let color = viewModel.getLapTextColor(item.type)
                                     
@@ -62,12 +60,17 @@ struct ContentView: View {
                                         .foregroundStyle(color)
                                         .font(.lapListText)
                                 }
-                                .padding(.horizontal, horizontalMargin)
+                                .padding(.horizontal, horizontalMargin / 2)
+                                
+                                Color.lapCellDividerColor
+                                    .frame(width: geo.size.width, height: 1)
                             }
                         }
                         .listRowBackground(Color.backgroundColor)
+                        .listStyle(.plain)
                     }
-                    .padding(.top, -30)
+                    .padding(.top, -38)
+                    .padding(.horizontal, -horizontalMargin * 0.25)
                     .scrollContentBackground(.hidden)
                 }
             }

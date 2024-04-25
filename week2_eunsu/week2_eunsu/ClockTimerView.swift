@@ -11,12 +11,13 @@ struct ClockTimerView: View {
     @ObservedObject var viewModel: ViewModel
     let width: CGFloat
     private let tickHeight: CGFloat = 8
-    private let longTickHeight: CGFloat = 12
-    private let tickWidth: CGFloat = 2
+    private let longTickHeight: CGFloat = 14
+    private let tickWidth: CGFloat = 2.5
     private let numberPadding: CGFloat = 40
     private let miniTickHeight: CGFloat = 6
     private let miniLongTickHeight: CGFloat = 9
     private let miniNumberPadding: CGFloat = 24
+    private let needleWidth: CGFloat = 10
     
     var body: some View {
         let miniWidth = width * 0.28
@@ -26,7 +27,7 @@ struct ClockTimerView: View {
         
         ZStack {
             //MARK: Mini Clock
-            ClockView(count: 48,
+            ClockView(count: 40,
                       longDivider: 2,
                       longTickHeigh: miniLongTickHeight,
                       tickHeight: miniTickHeight,
@@ -43,7 +44,7 @@ struct ClockTimerView: View {
             .frame(width: miniNumberWidth, height: miniNumberWidth)
             .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
             
-            NeedleView(width: 6,
+            NeedleView(width: needleWidth,
                        height: miniWidth,
                        color: .needleNormalColor, 
                        filledCircle: true)
@@ -72,7 +73,7 @@ struct ClockTimerView: View {
                 .padding(.top, width * 0.36)
             
             if let currentLapDegree: Double = viewModel.currentLapDegree {
-                NeedleView(width: 8,
+                NeedleView(width: needleWidth,
                            height: width,
                            color: .needleCurrentLapColor,
                            filledCircle: false,
@@ -80,7 +81,7 @@ struct ClockTimerView: View {
                 .rotationEffect(.radians(currentLapDegree))
             }
             
-            NeedleView(width: 8,
+            NeedleView(width: needleWidth,
                        height: width,
                        color: .needleNormalColor,
                        filledCircle: false,
