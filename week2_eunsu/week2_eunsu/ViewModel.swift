@@ -101,6 +101,8 @@ class ViewModel: ObservableObject {
     private func resetView() {
         leftButtonType = .lapPassive
         lapRecords = []
+        startDate = nil
+        timer = nil
         lapTimes = []
         lapTimes.append(0)
         lapIndex = 0
