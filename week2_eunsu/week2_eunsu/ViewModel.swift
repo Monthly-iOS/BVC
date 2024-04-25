@@ -9,7 +9,7 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var lapRecords: [LapItemRecord] = []
-    @Published var currentLapTime: String = "00:00.00"
+    @Published var currentLapTime: String = "" //totalLapTime의 string 버전
     @Published var isLapStarted: Bool = false
     @Published var leftButtonType: LeftButtonType = .lapPassive
     private var startDate: Date?
@@ -24,7 +24,7 @@ class ViewModel: ObservableObject {
         currentLapTime = getFormattedString(0)
     }
     
-    ///타이머에 5초 간격으로 표시되는 시간
+    ///타이머에 5초 간격으로 표시될 시간 배열
     func getNumbers(count: Int) -> [Int] {
         var numbers: [Int] = []
         
@@ -83,6 +83,7 @@ class ViewModel: ObservableObject {
         isLapStarted.toggle()
     }
     
+    ///leftButtonType의 상태에 따라 LeftButton의 텍스트와 색상 변경
     func getLeftButtonFeature() -> (String, Color, Color) {
         switch leftButtonType {
         case .lapPassive:
@@ -112,7 +113,7 @@ class ViewModel: ObservableObject {
         lapTimes[lapIndex] += timeElapsed
     }
     
-    ///기존 랩 시간에 재시작 시간으로부터 시간이 얼마나 흘렀는지 계산한 값을 더해 랩을 업데이트
+    ///기존 랩 시간에 재시작 시간으로부터 시간이 얼마나 흘렀는지 계산한 값을 더해 화면에 보이는 시간을 업데이트
     private func updateCurrentLapTime() {
         var timeElapsed: TimeInterval = 0
         var lapTimeElapsed: TimeInterval = 0
@@ -147,6 +148,7 @@ class ViewModel: ObservableObject {
         return String(format: "%02d:%02d.%02d", minutes, seconds, milliseconds)
     }
     
+    ///빈 lapRecords에 lapTimes 배열의 값을 추가한 다음 역순으로 전환
     private func updateRecords() {
         lapRecords = []
         
