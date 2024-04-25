@@ -48,7 +48,7 @@ struct ContentView: View {
                     }
                     
                     List {
-                        ForEach(viewModel.presenters) { item in
+                        ForEach(viewModel.lapRecords) { item in
                             VStack(alignment: .leading, spacing: 12) {
                                 Color.lapCellDividerColor
                                     .frame(width: geo.size.width, height: 1)

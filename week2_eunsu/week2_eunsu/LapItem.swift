@@ -11,7 +11,7 @@ enum LapType {
     case normal, best, worst
 }
 
-struct LapItemPresenter: Identifiable {
+struct LapItemRecord: Identifiable {
     let id = UUID()
     var lap: String = ""
     var time: String = ""

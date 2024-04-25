@@ -8,7 +8,7 @@
 import SwiftUI
 
 class ViewModel: ObservableObject {
-    @Published var presenters: [LapItemPresenter] = []
+    @Published var lapRecords: [LapItemRecord] = []
     @Published var currentLapTime: String = "00:00.00"
     @Published var isLapStarted: Bool = false
     private var startDate: Date?
@@ -17,7 +17,7 @@ class ViewModel: ObservableObject {
     private var lapTime: [Double] = []
     
     init() {
-        presenters = []
+        lapRecords = []
         lapTime.append(0)
         currentLapTime = getFormattedString(0)
     }
@@ -74,7 +74,7 @@ class ViewModel: ObservableObject {
         timeElapsed = getTimeElapsed()
         timeElapsed += lapTime[lapIndex]
         currentLapTime = getFormattedString(timeElapsed)
-        presenters[lapIndex].time = currentLapTime
+        lapRecords[lapIndex].time = currentLapTime
     }
     
     ///시작 시간으로부터 시간이 얼마나 흘렀는지 계산
@@ -102,9 +102,9 @@ class ViewModel: ObservableObject {
     }
     
     private func updateRecords() {
-        presenters = []
+        lapRecords = []
         for (index, lap) in lapTime.enumerated() {
-            presenters.append(LapItemPresenter(lap: "Lap \(index + 1)",
+            lapRecords.append(LapItemRecord(lap: "Lap \(index + 1)",
                                                time: getFormattedString(lap),
                                                type: .normal))
         }
