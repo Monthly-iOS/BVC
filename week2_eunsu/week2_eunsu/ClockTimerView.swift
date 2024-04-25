@@ -38,7 +38,7 @@ struct ClockTimerView: View {
             .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
             
             NumbersView(numbers: viewModel.getNumbers(count: 6),
-                        font: .clockMiniText,
+                        font: .miniClockText,
                         textColor: .clockTextColor)
             .frame(width: miniNumberWidth, height: miniNumberWidth)
             .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
