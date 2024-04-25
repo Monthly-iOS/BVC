@@ -63,9 +63,22 @@ class ViewModel: ObservableObject {
     private func updateCurrentLapTime() {
         var timeElapsed: TimeInterval = 0
         
-        guard let startDate = startDate else { return }
+        timeElapsed = getTimeElapsed()
+        timeElapsed += lapTime[lapIndex]
+        currentLapTime = getFormattedString(timeElapsed)
+        presenters[lapIndex].time = currentLapTime
+    }
+    
+    private func getTimeElapsed() -> Double {
+        guard let startDate = startDate else {
+            return 0
+        }
         
-        timeElapsed = Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
+        return Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
+    }
+    
+    private func getFormattedString(_ timeElapsed: Double) -> String {
+        var timeElapsed = timeElapsed
         
         let minutes: Int = Int(timeElapsed / 60)
         timeElapsed -= Double(minutes) * 60
@@ -75,6 +88,6 @@ class ViewModel: ObservableObject {
         
         let milliseconds = Int(timeElapsed * 100)
         
-        currentLapTime = String(format: "%02d:%02d.%02d", minutes, seconds, milliseconds)
+        return String(format: "%02d:%02d.%02d", minutes, seconds, milliseconds)
     }
 }
