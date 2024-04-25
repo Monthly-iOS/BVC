@@ -19,7 +19,7 @@ struct NeedleView: View {
         VStack(spacing: 0) {
             Rectangle()
                 .fill(color)
-                .frame(width: lineWidth, height: height / 2)
+                .frame(width: lineWidth, height: height / 2 - width / 2)
             
             RoundedRectangle(cornerRadius: .infinity)
                 .stroke(color, lineWidth: lineWidth)
