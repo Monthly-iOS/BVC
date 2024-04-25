@@ -12,7 +12,7 @@ struct NumberTimerView: View {
     
     var body: some View {
         VStack {
-            Text(viewModel.currentLapTime)
+            Text(viewModel.totalFormattedTime)
                 .foregroundStyle(Color.clockTextColor)
                 .font(.numberTimerText)
         }

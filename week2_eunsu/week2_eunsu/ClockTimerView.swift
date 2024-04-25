@@ -32,7 +32,7 @@ struct ClockTimerView: View {
                         textColor: .clockTextColor)
             .frame(width: numberWidth, height: numberWidth)
             
-            Text(viewModel.currentLapTime)
+            Text(viewModel.totalFormattedTime)
                 .font(.lapClockText)
                 .foregroundStyle(Color.clockTextColor)
                 .padding(.top, width * 0.36)

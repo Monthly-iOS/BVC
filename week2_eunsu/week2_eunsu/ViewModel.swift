@@ -9,7 +9,7 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     @Published var lapRecords: [LapItemRecord] = []
-    @Published var currentLapTime: String = "" //totalLapTime의 string 버전
+    @Published var totalFormattedTime: String = ""
     @Published var isLapStarted: Bool = false
     @Published var leftButtonType: LeftButtonType = .lapPassive
     private var startDate: Date?
@@ -21,7 +21,7 @@ class ViewModel: ObservableObject {
     init() {
         lapRecords = []
         lapTimes.append(0)
-        currentLapTime = getFormattedString(0)
+        totalFormattedTime = getFormattedString(0)
     }
     
     ///타이머에 5초 간격으로 표시될 시간 배열
@@ -102,7 +102,7 @@ class ViewModel: ObservableObject {
         lapTimes = []
         lapTimes.append(0)
         lapIndex = 0
-        currentLapTime = getFormattedString(0)
+        totalFormattedTime = getFormattedString(0)
         totalTimeElapsed = 0
     }
     
@@ -120,7 +120,7 @@ class ViewModel: ObservableObject {
         
         lapTimeElapsed = getTimeElapsed() + lapTimes[lapIndex]
         timeElapsed = getTimeElapsed() + totalTimeElapsed
-        currentLapTime = getFormattedString(timeElapsed)
+        totalFormattedTime = getFormattedString(timeElapsed)
         lapRecords[0].time = getFormattedString(lapTimeElapsed)
     }
     
