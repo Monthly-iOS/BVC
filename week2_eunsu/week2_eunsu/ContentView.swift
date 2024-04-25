@@ -22,7 +22,7 @@ struct ContentView: View {
                 VStack {
                     ZStack {
                         TabView() {
-//                            NumberTimerView(viewModel: viewModel)
+                            NumberTimerView(viewModel: viewModel)
                             
                             ClockTimerView(viewModel: viewModel,
                                            width: width)
