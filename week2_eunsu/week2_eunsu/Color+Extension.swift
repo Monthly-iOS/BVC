@@ -21,6 +21,7 @@ extension Color {
     static let resetButtonColor = Color.gray
     static let resetButtonTextColor = Color.white
     static let needleNormalColor = Color.orange
+    static let needleCurrentLapColor = Color.blue
     static let lapTypeNormalTextColor = Color.white
     static let lapTypeBestTextColor = Color.green
     static let lapTypeWorstTextColor = Color.red
