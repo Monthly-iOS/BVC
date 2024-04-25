@@ -50,7 +50,18 @@ class ViewModel: ObservableObject {
     }
     
     func leftButtonTapped() {
-        
+        switch leftButtonType {
+        case .lapPassive:
+            ()
+        case .lapActive:
+            updateTimes()
+            lapTimes.append(0)
+            lapIndex += 1
+            startDate = Date()
+            updateRecords()
+        case .reset:
+            resetView()
+        }
     }
     
     ///타이머를 시작 또는 중지시킴: 기존 랩의 시간을 업데이트
