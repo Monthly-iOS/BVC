@@ -14,9 +14,40 @@ struct ClockTimerView: View {
     private let tickHeight: CGFloat = 8
     private let longTickHeight: CGFloat = 12
     private let tickWidth: CGFloat = 2
+    private let miniTickHeight: CGFloat = 6
+    private let miniLongTickHeight: CGFloat = 9
+    private let miniNumberPadding: CGFloat = 24
     
     var body: some View {
+        let miniWidth = width * 0.28
+        let miniExtraMarginFromBottom = width * 0.07
+        let miniNumberWidth = miniWidth - miniNumberPadding
         ZStack {
+            //MARK: Mini Clock
+            ClockView(count: 48,
+                      longDivider: 2,
+                      longTickHeigh: miniLongTickHeight,
+                      tickHeight: miniTickHeight,
+                      tickWidth: tickWidth,
+                      highlightedColorDivider: 8,
+                      highlightedColor: .clockHighlightedcolor,
+                      normalColor: .clockNormalColor)
+            .frame(width: miniWidth, height: miniWidth)
+            .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
+            
+            NumbersView(numbers: viewModel.getNumbers(count: 6),
+                        font: .clockMiniText,
+                        textColor: .clockTextColor)
+            .frame(width: miniNumberWidth, height: miniNumberWidth)
+            .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
+            
+            NeedleView(width: 6,
+                       height: miniWidth,
+                       color: .needleNormalColor)
+            .rotationEffect(.radians(Double.pi / 2))
+            .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
+            
+            //MARK: Normal Clock
             ClockView(count: 240,
                       longDivider: 4,
                       longTickHeigh: longTickHeight,
