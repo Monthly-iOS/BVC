@@ -168,6 +168,28 @@ class ViewModel: ObservableObject {
                                                type: .normal))
         }
         
+        var times = lapTimes
+        
+        times.removeLast() //현재 측정증인 값은 삭제
+        
+        if times.count > 1 {
+            var minIndex = 0
+            var maxIndex = 0
+            
+            for (index, time) in times.enumerated() {
+                if time < times[minIndex] {
+                    minIndex = index
+                }
+                
+                if time > times[maxIndex] {
+                    maxIndex = index
+                }
+            }
+            
+            lapRecords[minIndex].type = .best
+            lapRecords[maxIndex].type = .worst
+        }
+        
         lapRecords.reverse()
     }
 }
