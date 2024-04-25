@@ -47,7 +47,7 @@ struct ClockTimerView: View {
                        height: miniWidth,
                        color: .needleNormalColor, 
                        filledCircle: true)
-            .rotationEffect(.radians(Double.pi / 2))
+            .rotationEffect(.radians(viewModel.totalTimeMinuteDegree))
             .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
             
             //MARK: Normal Clock
