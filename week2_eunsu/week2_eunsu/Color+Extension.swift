@@ -14,12 +14,12 @@ extension Color {
     static let clockTextColor = Color.white
     static let startButtonColor = Color.green.opacity(0.4)
     static let startButtonTextColor = Color.green
-    static let endButtonColor = Color.red.opacity(0.4)
-    static let endButtonTextColor = Color.red
+    static let stopButtonColor = Color.red.opacity(0.4)
+    static let stopButtonTextColor = Color.red
     static let lapButtonColor = Color.gray.opacity(0.4)
     static let lapButtonTextColor = Color.gray
-    static let restartButtonColor = Color.gray
-    static let restartButtonTextColor = Color.white
+    static let resetButtonColor = Color.gray
+    static let resetButtonTextColor = Color.white
     static let needleNormalColor = Color.orange
     static let lapTypeNormalTextColor = Color.white
     static let lapTypeBestTextColor = Color.green

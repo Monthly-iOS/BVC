@@ -18,8 +18,8 @@ struct RightButtonView: View {
                 .font(.buttonText)
         }
         .buttonStyle(ActionButtonStyle(
-            textColor: viewModel.isLapStarted ? .endButtonTextColor : .startButtonTextColor,
-            backgroundColor: viewModel.isLapStarted ? .endButtonColor : .startButtonColor))
+            textColor: viewModel.isLapStarted ? .stopButtonTextColor : .startButtonTextColor,
+            backgroundColor: viewModel.isLapStarted ? .stopButtonColor : .startButtonColor))
     }
 
 }
