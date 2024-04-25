@@ -101,11 +101,12 @@ class ViewModel: ObservableObject {
     ///기존 랩 시간에 재시작 시간으로부터 시간이 얼마나 흘렀는지 계산한 값을 더해 랩을 업데이트
     private func updateCurrentLapTime() {
         var timeElapsed: TimeInterval = 0
+        var lapTimeElapsed: TimeInterval = 0
         
-        timeElapsed = getTimeElapsed()
-        timeElapsed += lapTimes[lapIndex]
+        lapTimeElapsed = getTimeElapsed() + lapTimes[lapIndex]
+        timeElapsed = getTimeElapsed() + totalTimeElapsed
         currentLapTime = getFormattedString(timeElapsed)
-        lapRecords[lapIndex].time = currentLapTime
+        lapRecords[0].time = getFormattedString(lapTimeElapsed)
     }
     
     ///시작 시간으로부터 시간이 얼마나 흘렀는지 계산
