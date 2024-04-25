@@ -16,6 +16,7 @@ class ViewModel: ObservableObject {
     private var timer: Timer?
     private var lapIndex: Int = 0
     private var lapTimes: [Double] = []
+    private var totalTimeElapsed: Double = 0
     
     init() {
         lapRecords = []
