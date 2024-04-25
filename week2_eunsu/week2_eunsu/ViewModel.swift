@@ -11,6 +11,7 @@ class ViewModel: ObservableObject {
     @Published var lapRecords: [LapItemRecord] = []
     @Published var currentLapTime: String = "00:00.00"
     @Published var isLapStarted: Bool = false
+    @Published var leftButtonType: LeftButtonType = .lapPassive
     private var startDate: Date?
     private var timer: Timer?
     private var lapIndex: Int = 0
@@ -65,6 +66,17 @@ class ViewModel: ObservableObject {
         }
         
         isLapStarted.toggle()
+    }
+    
+    func getLeftButtonFeature() -> (String, Color, Color) {
+        switch leftButtonType {
+        case .lapPassive:
+            return ("Lap", .lapButtonColor, .lapButtonTextColor)
+        case .lapActive:
+            return ("Lap", .resetButtonColor, .resetButtonTextColor)
+        case .reset:
+            return ("Reset", .resetButtonColor, .resetButtonTextColor)
+        }
     }
     
     ///기존 랩 시간에 재시작 시간으로부터 시간이 얼마나 흘렀는지 계산한 값을 더해 랩을 업데이트

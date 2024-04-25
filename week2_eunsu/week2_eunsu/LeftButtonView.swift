@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum LeftButtonType {
+    case lapPassive, lapActive, reset
+}
+
 struct LeftButtonView: View {
     @ObservedObject var viewModel: ViewModel
     let buttonText: String
