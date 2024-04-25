@@ -9,6 +9,7 @@ import SwiftUI
 
 extension Font {
     static let clockText: Font = .system(size: 35, weight: .regular, design: .default)
+    static let clockMiniText: Font = .system(size: 17, weight: .regular, design: .default)
     static let buttonText: Font = .system(size: 20, weight: .regular, design: .default)
     static let lapListText: Font = .system(size: 17, weight: .regular, design: .default)
     static let lapClockText: Font = .system(size: 22, weight: .light, design: .default)
