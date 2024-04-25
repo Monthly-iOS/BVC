@@ -50,10 +50,18 @@ class ViewModel: ObservableObject {
     }
     
     func rightButtonTapped() {
-        startDate = Date()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] (_) in
-            self?.updateCurrentLapTime()
-        })
+        if isLapStarted {
+            lapTime[lapIndex] += getTimeElapsed()
+            timer?.invalidate() //메모리에서 타이머를 삭제
+        } else {
+            startDate = Date()
+            updateRecords()
+            timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { [weak self] (_) in
+                self?.updateCurrentLapTime()
+            }
+        }
+        
+        isLapStarted.toggle()
     }
     
     private func updateCurrentLapTime() {
