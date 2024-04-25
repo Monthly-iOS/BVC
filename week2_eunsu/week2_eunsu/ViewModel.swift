@@ -126,6 +126,10 @@ class ViewModel: ObservableObject {
         
         lapTimeElapsed = getTimeElapsed() + lapTimes[lapIndex]
         timeElapsed = getTimeElapsed() + totalTimeElapsed
+        
+        totalTimeDegree = Double.pi * timeElapsed / 30
+        currentLapDegree = Double.pi * lapTimeElapsed / 30
+        
         totalFormattedTime = getFormattedString(timeElapsed)
         lapRecords[0].time = getFormattedString(lapTimeElapsed)
     }
