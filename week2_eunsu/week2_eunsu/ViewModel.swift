@@ -94,4 +94,13 @@ class ViewModel: ObservableObject {
         
         return String(format: "%02d:%02d.%02d", minutes, seconds, milliseconds)
     }
+    
+    private func updateRecords() {
+        presenters = []
+        for (index, lap) in lapTime.enumerated() {
+            presenters.append(LapItemPresenter(lap: "Lap \(index + 1)",
+                                               time: getFormattedString(lap),
+                                               type: .normal))
+        }
+    }
 }
