@@ -22,6 +22,7 @@ class ViewModel: ObservableObject {
         currentLapTime = getFormattedString(0)
     }
     
+    ///타이머에 5초 간격으로 표시되는 시간
     func getNumbers(count: Int) -> [Int] {
         var numbers: [Int] = []
         
@@ -34,6 +35,7 @@ class ViewModel: ObservableObject {
         return numbers
     }
     
+    ///기록에 따라 랩 텍스트 색을 변화
     func getLapTextColor(_ type: LapType) -> Color {
         switch type {
         case .normal:
@@ -49,6 +51,7 @@ class ViewModel: ObservableObject {
         
     }
     
+    ///타이머를 시작 또는 중지시킴: 기존 랩의 시간을 업데이트
     func rightButtonTapped() {
         if isLapStarted {
             lapTime[lapIndex] += getTimeElapsed()
@@ -64,6 +67,7 @@ class ViewModel: ObservableObject {
         isLapStarted.toggle()
     }
     
+    ///기존 랩 시간에 재시작 시간으로부터 시간이 얼마나 흘렀는지 계산한 값을 더해 랩을 업데이트
     private func updateCurrentLapTime() {
         var timeElapsed: TimeInterval = 0
         
@@ -73,6 +77,7 @@ class ViewModel: ObservableObject {
         presenters[lapIndex].time = currentLapTime
     }
     
+    ///시작 시간으로부터 시간이 얼마나 흘렀는지 계산
     private func getTimeElapsed() -> Double {
         guard let startDate = startDate else {
             return 0
@@ -81,6 +86,7 @@ class ViewModel: ObservableObject {
         return Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
     }
     
+    ///00:00.00 형식으로 주어진 시간초를 변환
     private func getFormattedString(_ timeElapsed: Double) -> String {
         var timeElapsed = timeElapsed
         
