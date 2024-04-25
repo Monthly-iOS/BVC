@@ -80,6 +80,17 @@ class ViewModel: ObservableObject {
         }
     }
     
+    ///화면 초기화
+    private func resetView() {
+        leftButtonType = .lapPassive
+        lapRecords = []
+        lapTimes = []
+        lapTimes.append(0)
+        lapIndex = 0
+        currentLapTime = getFormattedString(0)
+        totalTimeElapsed = 0
+    }
+    
     ///기존 랩 시간에 재시작 시간으로부터 시간이 얼마나 흘렀는지 계산한 값을 더해 랩을 업데이트
     private func updateCurrentLapTime() {
         var timeElapsed: TimeInterval = 0
