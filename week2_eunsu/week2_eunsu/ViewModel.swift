@@ -146,10 +146,13 @@ class ViewModel: ObservableObject {
     
     private func updateRecords() {
         lapRecords = []
+        
         for (index, lap) in lapTimes.enumerated() {
             lapRecords.append(LapItemRecord(lap: "Lap \(index + 1)",
                                                time: getFormattedString(lap),
                                                type: .normal))
         }
+        
+        lapRecords.reverse()
     }
 }
