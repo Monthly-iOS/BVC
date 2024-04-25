@@ -45,7 +45,8 @@ struct ClockTimerView: View {
             
             NeedleView(width: 6,
                        height: miniWidth,
-                       color: .needleNormalColor)
+                       color: .needleNormalColor, 
+                       filledCircle: true)
             .rotationEffect(.radians(Double.pi / 2))
             .padding(.bottom, miniWidth + miniExtraMarginFromBottom)
             
@@ -74,6 +75,7 @@ struct ClockTimerView: View {
                 NeedleView(width: 8,
                            height: width,
                            color: .needleCurrentLapColor,
+                           filledCircle: false,
                            bottomLineHeight: 30)
                 .rotationEffect(.radians(currentLapDegree))
             }
@@ -81,6 +83,7 @@ struct ClockTimerView: View {
             NeedleView(width: 8,
                        height: width,
                        color: .needleNormalColor,
+                       filledCircle: false,
                        bottomLineHeight: 30)
             .rotationEffect(.radians(viewModel.totalTimeDegree))
         }

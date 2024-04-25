@@ -11,6 +11,7 @@ struct NeedleView: View {
     let width: CGFloat
     let height: CGFloat
     let color: Color
+    let filledCircle: Bool
     var bottomLineHeight: CGFloat? //작은 시계에는 필요하지 않음
     
     var body: some View {
@@ -22,8 +23,9 @@ struct NeedleView: View {
                 .frame(width: lineWidth, height: height / 2 - width / 2)
             
             RoundedRectangle(cornerRadius: .infinity)
-                .stroke(color, lineWidth: lineWidth)
-                .frame(width: width, height: width)
+                .fill(filledCircle ? color : .clear)
+                .stroke(filledCircle ? .clear : color, lineWidth: lineWidth)
+                .frame(width: width * 0.7, height: width * 0.7)
             
             if let bottomLineHeight = bottomLineHeight {
                 Rectangle()
