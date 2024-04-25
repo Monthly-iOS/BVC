@@ -15,11 +15,11 @@ class ViewModel: ObservableObject {
     private var startDate: Date?
     private var timer: Timer?
     private var lapIndex: Int = 0
-    private var lapTime: [Double] = []
+    private var lapTimes: [Double] = []
     
     init() {
         lapRecords = []
-        lapTime.append(0)
+        lapTimes.append(0)
         currentLapTime = getFormattedString(0)
     }
     
@@ -55,7 +55,7 @@ class ViewModel: ObservableObject {
     ///타이머를 시작 또는 중지시킴: 기존 랩의 시간을 업데이트
     func rightButtonTapped() {
         if isLapStarted {
-            lapTime[lapIndex] += getTimeElapsed()
+            lapTimes[lapIndex] += getTimeElapsed()
             timer?.invalidate() //메모리에서 타이머를 삭제
         } else {
             startDate = Date()
@@ -84,7 +84,7 @@ class ViewModel: ObservableObject {
         var timeElapsed: TimeInterval = 0
         
         timeElapsed = getTimeElapsed()
-        timeElapsed += lapTime[lapIndex]
+        timeElapsed += lapTimes[lapIndex]
         currentLapTime = getFormattedString(timeElapsed)
         lapRecords[lapIndex].time = currentLapTime
     }
@@ -115,7 +115,7 @@ class ViewModel: ObservableObject {
     
     private func updateRecords() {
         lapRecords = []
-        for (index, lap) in lapTime.enumerated() {
+        for (index, lap) in lapTimes.enumerated() {
             lapRecords.append(LapItemRecord(lap: "Lap \(index + 1)",
                                                time: getFormattedString(lap),
                                                type: .normal))
