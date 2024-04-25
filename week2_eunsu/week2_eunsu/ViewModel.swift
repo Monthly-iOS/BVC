@@ -12,6 +12,8 @@ class ViewModel: ObservableObject {
     @Published var totalFormattedTime: String = ""
     @Published var isLapStarted: Bool = false
     @Published var leftButtonType: LeftButtonType = .lapPassive
+    @Published var totalTimeDegree: Double = 0
+    @Published var currentLapDegree: Double?
     private var startDate: Date?
     private var timer: Timer?
     private var lapIndex: Int = 0
@@ -104,6 +106,8 @@ class ViewModel: ObservableObject {
         lapIndex = 0
         totalFormattedTime = getFormattedString(0)
         totalTimeElapsed = 0
+        totalTimeDegree = 0
+        currentLapDegree = nil
     }
     
     ///총 측정 시간과 lapTimes의 현재 랩타임 값을 업데이트
