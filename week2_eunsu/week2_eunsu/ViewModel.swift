@@ -13,17 +13,13 @@ class ViewModel: ObservableObject {
     @Published var isLapStarted: Bool = false
     private var startDate: Date?
     private var timer: Timer?
+    private var lapIndex: Int = 0
+    private var lapTime: [Double] = []
     
     init() {
-        presenters = [
-            LapItemPresenter(lap: "Lap 1", time: "00:02.85", type: .normal),
-            LapItemPresenter(lap: "Lap 2", time: "00:03.32", type: .normal),
-            LapItemPresenter(lap: "Lap 3", time: "00:01.80", type: .best),
-            LapItemPresenter(lap: "Lap 4", time: "00:05.17", type: .worst),
-            LapItemPresenter(lap: "Lap 5", time: "00:04.24", type: .normal)
-        ]
-        
-        updateCurrentLapTime()
+        presenters = []
+        lapTime.append(0)
+        currentLapTime = getFormattedString(0)
     }
     
     func getNumbers(count: Int) -> [Int] {
