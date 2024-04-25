@@ -35,10 +35,7 @@ struct ContentView: View {
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                         
                         HStack {
-                            LeftButtonView(viewModel: viewModel,
-                                           buttonText: "Lap",
-                                           textColor: .lapButtonTextColor,
-                                           backgroundColor: .lapButtonColor)
+                            LeftButtonView(viewModel: viewModel)
                             
                             Spacer()
                             

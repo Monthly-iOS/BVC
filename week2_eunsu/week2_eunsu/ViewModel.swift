@@ -71,11 +71,11 @@ class ViewModel: ObservableObject {
     func getLeftButtonFeature() -> (String, Color, Color) {
         switch leftButtonType {
         case .lapPassive:
-            return ("Lap", .lapButtonColor, .lapButtonTextColor)
+            return ("Lap", .lapButtonTextColor, .lapButtonColor)
         case .lapActive:
-            return ("Lap", .resetButtonColor, .resetButtonTextColor)
+            return ("Lap", .resetButtonTextColor, .resetButtonColor)
         case .reset:
-            return ("Reset", .resetButtonColor, .resetButtonTextColor)
+            return ("Reset", .resetButtonTextColor, .resetButtonColor)
         }
     }
     

@@ -13,18 +13,15 @@ enum LeftButtonType {
 
 struct LeftButtonView: View {
     @ObservedObject var viewModel: ViewModel
-    let buttonText: String
-    let textColor: Color
-    let backgroundColor: Color
     
     var body: some View {
         Button {
             viewModel.leftButtonTapped()
         } label: {
-            Text(buttonText)
+            Text(viewModel.getLeftButtonFeature().0)
                 .font(.buttonText)
         }
-        .buttonStyle(ActionButtonStyle(textColor: textColor,
-                                       backgroundColor: backgroundColor))
+        .buttonStyle(ActionButtonStyle(textColor: viewModel.getLeftButtonFeature().1,
+                                       backgroundColor: viewModel.getLeftButtonFeature().2))
     }
 }
