@@ -41,7 +41,7 @@ struct ClockTimerView: View {
                        height: width,
                        color: .needleNormalColor,
                        bottomLineHeight: 30)
-            .rotationEffect(.radians(Double.pi / 2))
+            .rotationEffect(.radians(viewModel.totalTimeDegree))
         }
     }
 }
