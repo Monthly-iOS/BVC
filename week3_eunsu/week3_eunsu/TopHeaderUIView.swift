@@ -8,13 +8,36 @@
 import UIKit
 
 class TopHeaderUIView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    private var viewModel: ViewModel
+    private let topImageView: UIImageView = UIImageView()
+    
+    init(frame: CGRect, viewModel: ViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: frame)
+        setTopHeader()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        topImageView.frame = bounds
+    }
+    
+    private func setTopHeader() {
+        addSubview(topImageView)
+        
+        topImageView.contentMode = .scaleAspectFit
+        topImageView.clipsToBounds = true
+        
+        Task {
+            do {
+                topImageView.image = try await viewModel.fetchImage(url: "https://i.namu.wiki/i/PHz0eVxMVdh9CaIi5yTK6GoxhNL79I_N10PmeyYEMcBUxyTX7zGfLyV46lEwNsxxdHJoLhoeUklYFMJVD-bsETOE8RMmhlYU6wprMPDe7WCHZDJ0TkCCtKMwY5tBp5lqt8MiGNgLDqLo2fypnSjiSw.webp")
+            } catch {
+                print("Cannot find header image")
+            }
+        }
+    }
 }

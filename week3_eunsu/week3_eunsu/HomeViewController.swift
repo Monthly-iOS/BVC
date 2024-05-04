@@ -8,7 +8,17 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    private let viewModel: ViewModel
     private let homeFeedTable: UITableView = UITableView(frame: .zero, style: .grouped)
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +35,10 @@ class HomeViewController: UIViewController {
         view.addSubview(homeFeedTable)
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
+        
+        let headerView = TopHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450),
+                                         viewModel: viewModel)
+        homeFeedTable.tableHeaderView = headerView
     }
 }
 
