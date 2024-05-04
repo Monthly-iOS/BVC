@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    private let homeFeedTable: UITableView = UITableView()
+    private let homeFeedTable: UITableView = UITableView(frame: .zero, style: .grouped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,10 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 20
     }
     
