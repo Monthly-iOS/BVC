@@ -34,7 +34,7 @@ class TopHeaderUIView: UIView {
         
         Task {
             do {
-                topImageView.image = try await viewModel.fetchImage(url: "https://i.namu.wiki/i/PHz0eVxMVdh9CaIi5yTK6GoxhNL79I_N10PmeyYEMcBUxyTX7zGfLyV46lEwNsxxdHJoLhoeUklYFMJVD-bsETOE8RMmhlYU6wprMPDe7WCHZDJ0TkCCtKMwY5tBp5lqt8MiGNgLDqLo2fypnSjiSw.webp")
+                topImageView.image = try await viewModel.fetchImage(url: "https://search.pstatic.net/common?quality=75&direct=true&src=https%3A%2F%2Fmovie-phinf.pstatic.net%2F20240207_151%2F1707288437263gBsdd_JPEG%2Fmovie_image.jpg")
             } catch {
                 print("Cannot find header image")
             }
