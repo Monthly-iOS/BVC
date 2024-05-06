@@ -12,6 +12,7 @@ class TopHeaderUIView: UIView {
     private let topImageView: UIImageView = UIImageView()
     private let playButton: UIButton = UIButton()
     private let downloadButton: UIButton = UIButton()
+    private let keywordsLabel: UILabel = UILabel()
     
     init(frame: CGRect, viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -19,6 +20,7 @@ class TopHeaderUIView: UIView {
         setTopHeader()
         addGradient(uiView: topImageView)
         setButtons()
+        setLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -28,6 +30,20 @@ class TopHeaderUIView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         addGradientBorder(uiView: topImageView)
+    }
+    
+    private func setLabel() {
+        addSubview(keywordsLabel)
+        
+        keywordsLabel.text = "판타지 · SF · 시리즈"
+        keywordsLabel.textColor = .white
+        keywordsLabel.font = .systemFont(ofSize: 13)
+        keywordsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            keywordsLabel.bottomAnchor.constraint(equalTo: playButton.topAnchor, constant: -10),
+            keywordsLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
     }
     
     private func setButtons() {
