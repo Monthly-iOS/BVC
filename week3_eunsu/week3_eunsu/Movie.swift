@@ -1,5 +1,5 @@
 //
-//  TrendingMovie.swift
+//  Movie.swift
 //  week3_eunsu
 //
 //  Created by Eunsu JEONG on 5/6/24.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct TrendingMovie: Decodable {
+struct Movie: Decodable {
     let page: Int
-    let results: [Result]
+    let results: [MovieResult]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -19,8 +19,8 @@ struct TrendingMovie: Decodable {
     }
 }
 
-// MARK: - Result
-struct Result: Decodable {
+// MARK: - MovieResult
+struct MovieResult: Decodable {
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
