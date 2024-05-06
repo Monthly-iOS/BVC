@@ -82,28 +82,68 @@
 		9E1C7DBF2BE653CD0075EA58 /* week3_eunsu */ = {
 			isa = PBXGroup;
 			children = (
+				9E1C7E142BE92F470075EA58 /* Controllers */,
+				9E1C7E132BE92F2D0075EA58 /* Models */,
+				9E1C7E122BE92F230075EA58 /* Views */,
+				9E1C7E112BE92F170075EA58 /* ViewModels */,
+				9E1C7E102BE92F100075EA58 /* Supports */,
+			);
+			path = week3_eunsu;
+			sourceTree = "<group>";
+		};
+		9E1C7E102BE92F100075EA58 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
 				9E1C7DC02BE653CD0075EA58 /* AppDelegate.swift */,
 				9E1C7DC22BE653CD0075EA58 /* SceneDelegate.swift */,
-				9E1C7DC42BE653CD0075EA58 /* MainTabBarViewController.swift */,
-				9E1C7DD42BE657D10075EA58 /* HomeViewController.swift */,
-				9E1C7DFC2BE8FC2B0075EA58 /* ThreeButtonsView.swift */,
-				9E1C7DDE2BE66A1E0075EA58 /* TopHeaderUIView.swift */,
-				9E1C7E062BE917BC0075EA58 /* TitleCollectionViewCell.swift */,
-				9E1C7DE02BE6733A0075EA58 /* ViewModel.swift */,
-				9E1C7E002BE907CD0075EA58 /* tmdbAPI.swift */,
-				9E1C7E042BE910840075EA58 /* Movie.swift */,
-				9E1C7E0A2BE9260E0075EA58 /* TrendingTV.swift */,
-				9E1C7E0C2BE9274E0075EA58 /* NowPlayingMovie.swift */,
-				9E1C7E0E2BE927BB0075EA58 /* CommonTypes.swift */,
-				9E1C7E082BE922480075EA58 /* NetflixItem.swift */,
-				9E1C7DDC2BE660EA0075EA58 /* CollectionViewTableViewCell.swift */,
-				9E1C7DD82BE659B60075EA58 /* NewAndHotViewController.swift */,
-				9E1C7DDA2BE659BD0075EA58 /* MyNetflixViewController.swift */,
 				9E1C7DC92BE653CF0075EA58 /* Assets.xcassets */,
 				9E1C7DCB2BE653CF0075EA58 /* LaunchScreen.storyboard */,
 				9E1C7DCE2BE653CF0075EA58 /* Info.plist */,
 			);
-			path = week3_eunsu;
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		9E1C7E112BE92F170075EA58 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9E1C7DE02BE6733A0075EA58 /* ViewModel.swift */,
+				9E1C7E002BE907CD0075EA58 /* tmdbAPI.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9E1C7E122BE92F230075EA58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E1C7DDE2BE66A1E0075EA58 /* TopHeaderUIView.swift */,
+				9E1C7DDC2BE660EA0075EA58 /* CollectionViewTableViewCell.swift */,
+				9E1C7E062BE917BC0075EA58 /* TitleCollectionViewCell.swift */,
+				9E1C7DFC2BE8FC2B0075EA58 /* ThreeButtonsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E1C7E132BE92F2D0075EA58 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E1C7E0E2BE927BB0075EA58 /* CommonTypes.swift */,
+				9E1C7E042BE910840075EA58 /* Movie.swift */,
+				9E1C7E082BE922480075EA58 /* NetflixItem.swift */,
+				9E1C7E0C2BE9274E0075EA58 /* NowPlayingMovie.swift */,
+				9E1C7E0A2BE9260E0075EA58 /* TrendingTV.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E1C7E142BE92F470075EA58 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E1C7DC42BE653CD0075EA58 /* MainTabBarViewController.swift */,
+				9E1C7DD42BE657D10075EA58 /* HomeViewController.swift */,
+				9E1C7DD82BE659B60075EA58 /* NewAndHotViewController.swift */,
+				9E1C7DDA2BE659BD0075EA58 /* MyNetflixViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4Z4N42YGF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = week3_eunsu/Info.plist;
+				INFOPLIST_FILE = week3_eunsu/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -371,7 +411,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X4Z4N42YGF;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = week3_eunsu/Info.plist;
+				INFOPLIST_FILE = week3_eunsu/Supports/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
