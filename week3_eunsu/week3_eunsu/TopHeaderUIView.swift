@@ -15,6 +15,7 @@ class TopHeaderUIView: UIView {
         self.viewModel = viewModel
         super.init(frame: frame)
         setTopHeader()
+        addGradient()
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +25,13 @@ class TopHeaderUIView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         topImageView.frame = bounds
+    }
+    
+    private func addGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.systemBackground.cgColor]
+        gradientLayer.frame = bounds
+        layer.addSublayer(gradientLayer)
     }
     
     private func setTopHeader() {
