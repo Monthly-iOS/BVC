@@ -13,7 +13,7 @@ class tmdbAPI {
     
     private init() { }
     
-    func requestData(url: URL, queryItems: [URLQueryItem]) async throws {
+    func requestData(url: URL, queryItems: [URLQueryItem]) async throws -> Data {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         components.queryItems = components.queryItems.map { $0 + queryItems } ?? queryItems
         
@@ -26,9 +26,11 @@ class tmdbAPI {
         ]
         
         let (data, _) = try await URLSession.shared.data(for: request)
+        
+        return data
     }
     
-    func requestTrendingMoviesOfToday() async throws -> [NetflixItem] {
+    func requestTrendingMoviesOfToday() async throws {
         guard let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day") else {
             return [NetflixItem]()
         }
@@ -41,8 +43,6 @@ class tmdbAPI {
         let results = decodedData.results.map { (result) -> NetflixItem in
             NetflixItem(title: result.title, image: imageURL + result.posterPath)
         }
-
-        return results
     }
     
     func requestTrendingTVsOfToday() async throws {
