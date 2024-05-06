@@ -17,7 +17,7 @@ class TopHeaderUIView: UIView {
         self.viewModel = viewModel
         super.init(frame: frame)
         setTopHeader()
-        addGradient()
+        addGradient(uiView: topImageView)
         setButtons()
     }
     
@@ -27,6 +27,7 @@ class TopHeaderUIView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        addGradientBorder(uiView: topImageView)
     }
     
     private func setButtons() {
@@ -64,11 +65,12 @@ class TopHeaderUIView: UIView {
         ])
     }
     
-    private func addGradient() {
+    private func addGradient(uiView: UIView) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.systemBackground.cgColor]
         gradientLayer.frame = bounds
-        layer.addSublayer(gradientLayer)
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
+        uiView.layer.addSublayer(gradientLayer)
     }
     
     private func setTopHeader() {
@@ -93,5 +95,22 @@ class TopHeaderUIView: UIView {
             topImageView.topAnchor.constraint(equalTo: topAnchor),
             topImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
+    }
+    
+    func addGradientBorder(uiView: UIView) {
+        let gradientBorder = CAGradientLayer()
+        gradientBorder.frame =  CGRect(origin: CGPointZero, size: uiView.frame.size)
+        gradientBorder.colors = [UIColor.clear.cgColor, UIColor.darkGray.cgColor]
+
+        let shape = CAShapeLayer()
+        shape.lineWidth = 2
+        shape.path = UIBezierPath(roundedRect: uiView.bounds,
+                                  cornerRadius: uiView.layer.cornerRadius).cgPath
+        shape.strokeColor = UIColor.green.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        gradientBorder.mask = shape
+
+        uiView.layer.addSublayer(gradientBorder)
+        uiView.clipsToBounds = true
     }
 }
