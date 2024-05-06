@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
                                                                 width: view.bounds.width,
                                                                 height: view.bounds.height * 0.6),
                                                   viewModel: viewModel)
+    private let userID: String = "유니스"
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -28,11 +29,37 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTable()
+        configureNavBar(userID: userID)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
+    }
+    
+    private func configureNavBar(userID: String) {
+        let userLabel: UILabel = UILabel()
+        userLabel.text = "\(userID) 님"
+        userLabel.textColor = .white
+        userLabel.font = .systemFont(ofSize: 25, weight: .medium)
+        
+        let buttonsSize = CGRect(x: 0, y: 0, width: 35, height: 30)
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .medium)
+        
+        let airplayButton = UIButton()
+        let airplayButtonItem = UIBarButtonItem.init(customView: airplayButton)
+        airplayButton.setImage(UIImage(systemName: "airplayvideo", withConfiguration: imageConfig), for: .normal)
+        airplayButton.frame = buttonsSize
+        airplayButton.tintColor = .white
+        
+        let searchButton = UIButton()
+        let searchButtonItem = UIBarButtonItem.init(customView: searchButton)
+        searchButton.setImage(UIImage(systemName: "magnifyingglass", withConfiguration: imageConfig), for: .normal)
+        searchButton.frame = buttonsSize
+        searchButton.tintColor = .white
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: userLabel)
+        navigationItem.rightBarButtonItems = [searchButtonItem, airplayButtonItem]
     }
     
     private func setTable() {
