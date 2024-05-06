@@ -27,7 +27,6 @@ class TopHeaderUIView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        topImageView.frame = bounds
     }
     
     private func setButtons() {
@@ -75,8 +74,10 @@ class TopHeaderUIView: UIView {
     private func setTopHeader() {
         addSubview(topImageView)
         
-        topImageView.contentMode = .scaleAspectFit
+        topImageView.contentMode = .scaleAspectFill
         topImageView.clipsToBounds = true
+        topImageView.layer.cornerRadius = 10
+        topImageView.translatesAutoresizingMaskIntoConstraints = false
         
         Task {
             do {
@@ -85,5 +86,12 @@ class TopHeaderUIView: UIView {
                 print("Cannot find header image")
             }
         }
+        
+        NSLayoutConstraint.activate([
+            topImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            topImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            topImageView.topAnchor.constraint(equalTo: topAnchor),
+            topImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+        ])
     }
 }
