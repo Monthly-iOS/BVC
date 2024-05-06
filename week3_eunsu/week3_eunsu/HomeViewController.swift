@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setTable()
         configureNavBar(userID: userID)
+//        navigationItem.titleView = ThreeButtonsView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,6 +58,15 @@ class HomeViewController: UIViewController {
         searchButton.setImage(UIImage(systemName: "magnifyingglass", withConfiguration: imageConfig), for: .normal)
         searchButton.frame = buttonsSize
         searchButton.tintColor = .white
+        
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.hidesNavigationBarDuringPresentation = true
+//        searchController.searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
+//        searchController.searchBar.scopeButtonTitles = ["시리즈", "영화"]
+//        searchController.searchBar.showsScopeBar = true
+//        
+//        navigationItem.searchController = searchController
+//        navigationItem.hidesSearchBarWhenScrolling = true
         
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: userLabel)
         navigationItem.rightBarButtonItems = [searchButtonItem, airplayButtonItem]

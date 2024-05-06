@@ -18,6 +18,7 @@
 		9E1C7DDD2BE660EA0075EA58 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1C7DDC2BE660EA0075EA58 /* CollectionViewTableViewCell.swift */; };
 		9E1C7DDF2BE66A1E0075EA58 /* TopHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1C7DDE2BE66A1E0075EA58 /* TopHeaderUIView.swift */; };
 		9E1C7DE12BE6733A0075EA58 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1C7DE02BE6733A0075EA58 /* ViewModel.swift */; };
+		9E1C7DFD2BE8FC2B0075EA58 /* ThreeButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1C7DFC2BE8FC2B0075EA58 /* ThreeButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9E1C7DDC2BE660EA0075EA58 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		9E1C7DDE2BE66A1E0075EA58 /* TopHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderUIView.swift; sourceTree = "<group>"; };
 		9E1C7DE02BE6733A0075EA58 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9E1C7DFC2BE8FC2B0075EA58 /* ThreeButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				9E1C7DC22BE653CD0075EA58 /* SceneDelegate.swift */,
 				9E1C7DC42BE653CD0075EA58 /* MainTabBarViewController.swift */,
 				9E1C7DD42BE657D10075EA58 /* HomeViewController.swift */,
+				9E1C7DFC2BE8FC2B0075EA58 /* ThreeButtonsView.swift */,
 				9E1C7DDE2BE66A1E0075EA58 /* TopHeaderUIView.swift */,
 				9E1C7DE02BE6733A0075EA58 /* ViewModel.swift */,
 				9E1C7DDC2BE660EA0075EA58 /* CollectionViewTableViewCell.swift */,
@@ -155,6 +158,7 @@
 				9E1C7DC52BE653CD0075EA58 /* MainTabBarViewController.swift in Sources */,
 				9E1C7DE12BE6733A0075EA58 /* ViewModel.swift in Sources */,
 				9E1C7DDB2BE659BD0075EA58 /* MyNetflixViewController.swift in Sources */,
+				9E1C7DFD2BE8FC2B0075EA58 /* ThreeButtonsView.swift in Sources */,
 				9E1C7DD92BE659B60075EA58 /* NewAndHotViewController.swift in Sources */,
 				9E1C7DDD2BE660EA0075EA58 /* CollectionViewTableViewCell.swift in Sources */,
 				9E1C7DC12BE653CD0075EA58 /* AppDelegate.swift in Sources */,
