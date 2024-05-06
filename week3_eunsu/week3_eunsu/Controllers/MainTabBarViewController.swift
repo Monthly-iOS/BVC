@@ -40,7 +40,7 @@ class MainTabBarViewController: UITabBarController {
         
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .gray
-        tabBar.barTintColor = .darkGray
+        tabBar.barTintColor = .systemGray6
     }
 
 }
