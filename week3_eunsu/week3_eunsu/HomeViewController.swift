@@ -7,6 +7,15 @@
 
 import UIKit
 
+enum Sections: Int {
+    case TrendingMovies = 0
+    case TrendingTV = 1
+    case NowPlayingMovies = 2
+    case PopularMovies = 3
+    case TopRatedMovies = 4
+    case UpcomingMovies = 5
+}
+
 class HomeViewController: UIViewController {
     private let viewModel: ViewModel
     private let homeFeedTable: UITableView = UITableView(frame: .zero, style: .grouped)
@@ -96,7 +105,56 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.textLabel?.text = "Hello!"
+        switch indexPath.section {
+        case Sections.TrendingMovies.rawValue:
+            Task {
+                do {
+                    let netflixItems = try await tmdbAPI.shared.requestTrendingMoviesOfToday()
+                    cell.configure(with: netflixItems)
+                }
+            }
+        case Sections.TrendingTV.rawValue:
+            Task {
+                do {
+                    let netflixItems = try await tmdbAPI.shared.requestTrendingTVsOfToday()
+                    cell.configure(with: netflixItems)
+                }
+            }
+        case Sections.NowPlayingMovies.rawValue:
+            Task {
+                do {
+                    let netflixItems = try await tmdbAPI.shared.requestNowPlayingMovies()
+                    cell.configure(with: netflixItems)
+                }
+            }
+        case Sections.PopularMovies.rawValue:
+            Task {
+                do {
+                    let url = tmdbAPI.shared.popularMovieURL
+                    let netflixItems = try await tmdbAPI.shared.requestMovie(url: url)
+                    cell.configure(with: netflixItems)
+                }
+            }
+        case Sections.TopRatedMovies.rawValue:
+            Task {
+                do {
+                    let url = tmdbAPI.shared.topRatedMovieURL
+                    let netflixItems = try await tmdbAPI.shared.requestMovie(url: url)
+                    cell.configure(with: netflixItems)
+                }
+            }
+        case Sections.UpcomingMovies.rawValue:
+            Task {
+                do {
+                    let url = tmdbAPI.shared.UpcomingMovieURL
+                    let netflixItems = try await tmdbAPI.shared.requestMovie(url: url)
+                    cell.configure(with: netflixItems)
+                }
+            }
+        default:
+            return UITableViewCell()
+        }
+        
         return cell
     }
     
