@@ -28,6 +28,8 @@ class TitleCollectionViewCell: UICollectionViewCell {
     private func setUI() {
         contentView.addSubview(posterImageView)
         posterImageView.contentMode = .scaleAspectFill
+        posterImageView.clipsToBounds = true
+        posterImageView.layer.cornerRadius = 3
     }
     
     func configure(with imageURL: String) {
