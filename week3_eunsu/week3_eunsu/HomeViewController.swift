@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
                                                                 height: view.bounds.height * 0.6),
                                                   viewModel: viewModel)
     private let userID: String = "유니스"
+    private let sectionTitles: [String] = ["오늘 대한민국의 TOP 10 영화", "오늘 대한민국의 TOP 10 시리즈", "현재 상영작", "누적 인기 영화", "리뷰가 좋은 영화", "상영 예정작"]
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -87,7 +88,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 20
+        return sectionTitles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -97,6 +98,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = "Hello!"
         return cell
+    }
+    
+    //section title 설정
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let myLabel = UILabel()
+        myLabel.frame = CGRect(x: 0, y: 15, width: 320, height: 18)
+        myLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        myLabel.text = sectionTitles[section]
+        
+        let headerView = UIView()
+        headerView.addSubview(myLabel)
+        
+        return headerView
     }
     
     //각 셀의 높이
