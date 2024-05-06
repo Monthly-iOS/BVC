@@ -53,12 +53,12 @@ class TopHeaderUIView: UIView {
         downloadButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            playButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            playButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
+            playButton.trailingAnchor.constraint(equalTo: centerXAnchor, constant: -5),
+            playButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25),
             playButton.widthAnchor.constraint(equalToConstant: frame.width / 2.6),
             playButton.heightAnchor.constraint(equalToConstant: 40),
             
-            downloadButton.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 10),
+            downloadButton.leadingAnchor.constraint(equalTo: centerXAnchor, constant: 5),
             downloadButton.bottomAnchor.constraint(equalTo: playButton.bottomAnchor),
             downloadButton.widthAnchor.constraint(equalToConstant: frame.width / 2.6),
             downloadButton.heightAnchor.constraint(equalToConstant: 40)
