@@ -10,6 +10,9 @@ import UIKit
 class tmdbAPI {
     static let shared = tmdbAPI()
     private let imageURL = "https://image.tmdb.org/t/p/w300"
+    let popularMovieURL = "https://api.themoviedb.org/3/movie/popular"
+    let topRatedMovieURL = "https://api.themoviedb.org/3/movie/top_rated"
+    let UpcomingMovieURL = "https://api.themoviedb.org/3/movie/upcoming"
     
     private init() { }
     
@@ -39,61 +42,63 @@ class tmdbAPI {
         ]
         
         let data = try await requestData(url: url, queryItems: queryItems)
-        let decodedData = try JSONDecoder().decode(TrendingMovie.self, from: data)
-        let results = decodedData.results.map { (result) -> NetflixItem in
-            NetflixItem(title: result.title, image: imageURL + result.posterPath)
+        let decodedData = try JSONDecoder().decode(Movie.self, from: data)
+        let results = decodedData.results.map { (decodedData) -> NetflixItem in
+            NetflixItem(title: decodedData.title, image: imageURL + decodedData.posterPath)
         }
 
         return results
     }
     
-    func requestTrendingTVsOfToday() async throws {
-        guard let url = URL(string: "https://api.themoviedb.org/3/trending/tv/day") else { return }
+    func requestTrendingTVsOfToday() async throws -> [NetflixItem] {
+        guard let url = URL(string: "https://api.themoviedb.org/3/trending/tv/day") else {
+            return [NetflixItem]()
+        }
         let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "language", value: "en-US"),
+            URLQueryItem(name: "language", value: "ko"),
         ]
         let data = try await requestData(url: url, queryItems: queryItems)
-        print(String(decoding: data, as: UTF8.self))
+        let decodedData = try JSONDecoder().decode(TrendingTV.self, from: data)
+        let results = decodedData.results.map { (decodedData) -> NetflixItem in
+            NetflixItem(title: decodedData.name, image: imageURL + decodedData.posterPath)
+        }
+        
+        return results
     }
     
-    func requestNowPlayingMovies() async throws {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing") else { return }
+    func requestNowPlayingMovies() async throws -> [NetflixItem] {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing") else { 
+            return [NetflixItem]()
+        }
         let queryItems: [URLQueryItem] = [
             URLQueryItem(name: "language", value: "ko"),
             URLQueryItem(name: "page", value: "1"),
         ]
         let data = try await requestData(url: url, queryItems: queryItems)
-        print(String(decoding: data, as: UTF8.self))
+        let decodedData = try JSONDecoder().decode(NowPlayingMovie.self, from: data)
+        let results = decodedData.results.map { (decodedData) -> NetflixItem in
+            NetflixItem(title: decodedData.title, image: imageURL + decodedData.posterPath)
+        }
+        
+        return results
     }
     
-    func requestPopularMovies() async throws {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular") else { return }
+    func requestMovie(url: String) async throws -> [NetflixItem] {
+        guard let url = URL(string: url) else {
+            return [NetflixItem]()
+        }
+        
         let queryItems: [URLQueryItem] = [
             URLQueryItem(name: "language", value: "ko"),
-            URLQueryItem(name: "page", value: "1"),
         ]
+        
         let data = try await requestData(url: url, queryItems: queryItems)
-        print(String(decoding: data, as: UTF8.self))
-    }
-    
-    func requestTopRatedMovies() async throws {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated") else { return }
-        let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "language", value: "ko"),
-            URLQueryItem(name: "page", value: "1"),
-        ]
-        let data = try await requestData(url: url, queryItems: queryItems)
-        print(String(decoding: data, as: UTF8.self))
-    }
-    
-    func requestUpcomingMovies() async throws {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/upcoming") else { return }
-        let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "language", value: "ko"),
-            URLQueryItem(name: "page", value: "1"),
-        ]
-        let data = try await requestData(url: url, queryItems: queryItems)
-        print(String(decoding: data, as: UTF8.self))
+        let decodedData = try JSONDecoder().decode(Movie.self, from: data)
+        let results = decodedData.results.map { (decodedData) -> NetflixItem in
+            NetflixItem(title: decodedData.title, image: imageURL + decodedData.posterPath)
+        }
+
+        return results
     }
     
     func fetchImage(url: String) async throws -> UIImage {
