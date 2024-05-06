@@ -30,7 +30,7 @@ class tmdbAPI {
         return data
     }
     
-    func requestTrendingMoviesOfToday() async throws {
+    func requestTrendingMoviesOfToday() async throws -> [NetflixItem] {
         guard let url = URL(string: "https://api.themoviedb.org/3/trending/movie/day") else {
             return [NetflixItem]()
         }
@@ -43,6 +43,8 @@ class tmdbAPI {
         let results = decodedData.results.map { (result) -> NetflixItem in
             NetflixItem(title: result.title, image: imageURL + result.posterPath)
         }
+
+        return results
     }
     
     func requestTrendingTVsOfToday() async throws {
