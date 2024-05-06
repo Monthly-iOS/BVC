@@ -38,6 +38,13 @@ class CollectionViewTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+    
+    func configure(with movieList: [NetflixItem]) {
+        self.movieList = movieList
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
 }
 
 extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
