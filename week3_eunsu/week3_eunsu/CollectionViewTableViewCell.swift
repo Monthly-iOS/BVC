@@ -50,6 +50,8 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
             return UICollectionViewCell()
         }
         
+        cell.configure(with: movieList[indexPath.row].image)
+        
         return cell
     }
 }
