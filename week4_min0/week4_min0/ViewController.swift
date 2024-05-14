@@ -10,21 +10,21 @@ import UIKit
 class ViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
-        // item, layout에 사이즈 설정해야 나옴
-        // one item size
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/3))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        // item을 포함하는 group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(500))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        let layout = UICollectionViewCompositionalLayout(section: section)
+
+        let layout = UICollectionViewCompositionalLayout { (sectionIndex, rect) -> NSCollectionLayoutSection? in
+            
+            switch sectionIndex {
+            case 0:return CompositionalLayoutSection.tommorowSection()
+            case 1: return CompositionalLayoutSection.weekSection()
+            default: return nil
+            }
+            
+        }
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .black
+        
         return collectionView
     }()
     
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         
         collectionView.dataSource = self
         
+        collectionView.register(NextStateCell.self, forCellWithReuseIdentifier: NextStateCell.identifier)
         collectionView.register(DayInfoCell.self, forCellWithReuseIdentifier: DayInfoCell.identifier)
     }
     
@@ -61,23 +62,32 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        weekInfo.count
+
+        if section == 1{
+            return weekInfo.count
+        } else {
+            return tommorowItem.count
+        }
     }
     
     // 셀 등록
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // indexPath: 셀의 위치를 특정
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayInfoCell.identifier, for: indexPath) as! DayInfoCell
-        cell.dayInfoCellItem = weekInfo[indexPath.row]
-        return cell
+        if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayInfoCell.identifier, for: indexPath) as! DayInfoCell
+            cell.dayInfoCellItem = weekInfo[indexPath.row]
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NextStateCell.identifier, for: indexPath) as! NextStateCell
+            cell.nextStateItem = tommorowItem[indexPath.row]
+            return cell
+        }
         
     }
-    
-    
     
 }

@@ -28,8 +28,9 @@ class DayInfoCell: UICollectionViewCell {
     
     private lazy var weatherImageView: UIImageView = {
         let imageView = UIImageView()
-        
-        imageView.layer.cornerRadius = 10
+        imageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
+//        imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +42,7 @@ class DayInfoCell: UICollectionViewCell {
         label.font = .boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.textColor = .systemGray2
         return label
     }()
@@ -71,7 +72,7 @@ class DayInfoCell: UICollectionViewCell {
         stackView.alignment = .center
         stackView.distribution = .fill
         // 한 줄의 아이템 간의 간격
-        stackView.spacing = 20
+        stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -80,9 +81,9 @@ class DayInfoCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
+//        stackView.distribution = .fillEqually
         // 한 줄의 아이템 간의 간격
-        stackView.spacing = 0
+        stackView.spacing = 4
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -106,6 +107,7 @@ class DayInfoCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.contentView.backgroundColor = .blue
         configureCell()
     }
     

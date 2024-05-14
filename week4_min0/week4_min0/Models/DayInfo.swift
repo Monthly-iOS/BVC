@@ -20,7 +20,7 @@ let weekInfo: [DayInfo] = [
         weather: "Rainy",
         highTemp: "+20°",
         lowTemp: "+14°",
-        weatherImg: UIImage(named: "rainy.png")!
+        weatherImg: UIImage(named: "rainy")!
     ),
     DayInfo(
         day: "The",
