@@ -13,6 +13,8 @@
 		D234F2422BF0F7A900612030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D234F2412BF0F7A900612030 /* Assets.xcassets */; };
 		D234F2452BF0F7A900612030 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D234F2442BF0F7A900612030 /* Base */; };
 		D234F2E92BF2815A00612030 /* DayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234F2E82BF2815A00612030 /* DayInfo.swift */; };
+		D234F2EE2BF28A9700612030 /* CurrentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234F2ED2BF28A9700612030 /* CurrentState.swift */; };
+		D24F2CB82BF3612F00BE823B /* DayInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2CB72BF3612F00BE823B /* DayInfoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D234F2442BF0F7A900612030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D234F2462BF0F7A900612030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D234F2E82BF2815A00612030 /* DayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfo.swift; sourceTree = "<group>"; };
+		D234F2ED2BF28A9700612030 /* CurrentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentState.swift; sourceTree = "<group>"; };
+		D24F2CB72BF3612F00BE823B /* DayInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		D234F2372BF0F7A800612030 /* week4_min0 */ = {
 			isa = PBXGroup;
 			children = (
+				D234F2EA2BF289BE00612030 /* Cells */,
 				D234F2E72BF2812000612030 /* Models */,
 				D234F2382BF0F7A800612030 /* AppDelegate.swift */,
 				D234F23A2BF0F7A800612030 /* SceneDelegate.swift */,
@@ -71,8 +76,17 @@
 			isa = PBXGroup;
 			children = (
 				D234F2E82BF2815A00612030 /* DayInfo.swift */,
+				D234F2ED2BF28A9700612030 /* CurrentState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D234F2EA2BF289BE00612030 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D24F2CB72BF3612F00BE823B /* DayInfoCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +161,9 @@
 			files = (
 				D234F23D2BF0F7A800612030 /* ViewController.swift in Sources */,
 				D234F2E92BF2815A00612030 /* DayInfo.swift in Sources */,
+				D234F2EE2BF28A9700612030 /* CurrentState.swift in Sources */,
 				D234F2392BF0F7A800612030 /* AppDelegate.swift in Sources */,
+				D24F2CB82BF3612F00BE823B /* DayInfoCell.swift in Sources */,
 				D234F23B2BF0F7A800612030 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
