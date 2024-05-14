@@ -18,14 +18,17 @@ class DayInfoCell: UICollectionViewCell {
     
     private lazy var dayLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .systemGray2
         return label
     }()
     
     private lazy var weatherImageView: UIImageView = {
         let imageView = UIImageView()
+        
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
@@ -35,25 +38,30 @@ class DayInfoCell: UICollectionViewCell {
     
     private lazy var weather: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .systemGray2
         return label
     }()
     
     private lazy var highTempLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
+        label.textColor = .white
         return label
     }()
     
     private lazy var lowTempLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemGray2
         return label
     }()
     
@@ -61,7 +69,29 @@ class DayInfoCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal // vertical -> vstack
         stackView.alignment = .center
+        stackView.distribution = .fill
+        // 한 줄의 아이템 간의 간격
+        stackView.spacing = 20
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var subStack1: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
         stackView.distribution = .fillEqually
+        // 한 줄의 아이템 간의 간격
+        stackView.spacing = 0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var subStack2: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal // vertical -> vstack
+        stackView.alignment = .center
+        stackView.distribution = .fill
         // 한 줄의 아이템 간의 간격
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -88,17 +118,19 @@ class DayInfoCell: UICollectionViewCell {
         containerView.addSubview(hStack)
         
         NSLayoutConstraint.activate([
-//            containerView.topAnchor.constraint(equalTo: contentView.topAnchor),
-//            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-//            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            
             hStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             hStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             hStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant:  16),
             hStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
         ])
-        [dayLabel, weatherImageView, weather, highTempLabel, lowTempLabel].forEach { hStack.addArrangedSubview($0) }
+        
+        [weatherImageView, weather].forEach {
+            subStack1.addArrangedSubview($0)
+        }
+        [highTempLabel, lowTempLabel].forEach {
+            subStack2.addArrangedSubview($0)
+        }
+        [dayLabel, subStack1, subStack2].forEach { hStack.addArrangedSubview($0) }
     }
     
     private func bindCell(with item: DayInfo) {

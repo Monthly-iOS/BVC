@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         // item, layout에 사이즈 설정해야 나옴
         // one item size
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/7))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1/3))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // item을 포함하는 group
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .black
         return collectionView
     }()
     
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         title = "7 days"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
         navigationController?.navigationBar.prefersLargeTitles = true
         
         setupCollectionView()
