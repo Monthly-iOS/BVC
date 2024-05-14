@@ -21,9 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds) // SceneDelegate의 프로퍼티에 설정
         
-        let viewController = ViewController() // 처음 보일 view controller
+        let viewController = WeatherViewController() // 처음 보일 view controller
         
-        window?.rootViewController = viewController     // 위에서 만든 view controller를 첫 화면으로 띄우기
+        window?.rootViewController = WeatherViewController()     // 위에서 만든 view controller를 첫 화면으로 띄우기
         
         window?.makeKeyAndVisible()     // 화면에 보이게끔
         window?.windowScene = windowScene
