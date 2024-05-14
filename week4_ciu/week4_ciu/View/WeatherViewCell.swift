@@ -22,7 +22,7 @@ class WeatherViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 25)
+        label.font = UIFont.systemFont(ofSize: 22)
         return label
     }()
     
@@ -34,6 +34,14 @@ class WeatherViewCell: UICollectionViewCell {
         return img
     }()
     
+    lazy var clockLabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .systemGray
+        label.font = UIFont.systemFont(ofSize: 16)
+        return label
+    }()
+    
    // 초기화 (Cell안의 요소들을 부모 뷰에 포함 및 layout 설정)
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,6 +49,7 @@ class WeatherViewCell: UICollectionViewCell {
         
         blueBackgroundView.addSubview(self.temperLabel)
         blueBackgroundView.addSubview(self.imageView)
+        blueBackgroundView.addSubview(self.clockLabel)
         
         blueBackgroundView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview().offset(10)

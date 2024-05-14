@@ -14,6 +14,5 @@ struct Temper {
     var wind: String
     var humidity: String
     var chanceOfRain: String
-    var weekend: String
     var isSelect: Bool
 }
