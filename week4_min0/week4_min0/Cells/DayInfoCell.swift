@@ -107,7 +107,6 @@ class DayInfoCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentView.backgroundColor = .blue
         configureCell()
     }
     
