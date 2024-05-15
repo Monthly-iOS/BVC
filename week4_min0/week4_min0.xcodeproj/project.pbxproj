@@ -12,10 +12,10 @@
 		D234F23D2BF0F7A800612030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234F23C2BF0F7A800612030 /* ViewController.swift */; };
 		D234F2422BF0F7A900612030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D234F2412BF0F7A900612030 /* Assets.xcassets */; };
 		D234F2452BF0F7A900612030 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D234F2442BF0F7A900612030 /* Base */; };
-		D234F2E92BF2815A00612030 /* DayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234F2E82BF2815A00612030 /* DayInfo.swift */; };
-		D234F2EE2BF28A9700612030 /* NextState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234F2ED2BF28A9700612030 /* NextState.swift */; };
-		D24F2CB82BF3612F00BE823B /* DayInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2CB72BF3612F00BE823B /* DayInfoCell.swift */; };
-		D24F2CBA2BF3AE7E00BE823B /* NextStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2CB92BF3AE7E00BE823B /* NextStateCell.swift */; };
+		D234F2E92BF2815A00612030 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234F2E82BF2815A00612030 /* Day.swift */; };
+		D234F2EE2BF28A9700612030 /* Tommorow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D234F2ED2BF28A9700612030 /* Tommorow.swift */; };
+		D24F2CB82BF3612F00BE823B /* WeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2CB72BF3612F00BE823B /* WeekCell.swift */; };
+		D24F2CBA2BF3AE7E00BE823B /* TommorowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2CB92BF3AE7E00BE823B /* TommorowCell.swift */; };
 		D24F2CBC2BF3B19800BE823B /* CompositionalLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F2CBB2BF3B19800BE823B /* CompositionalLayoutSection.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +27,10 @@
 		D234F2412BF0F7A900612030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D234F2442BF0F7A900612030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D234F2462BF0F7A900612030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D234F2E82BF2815A00612030 /* DayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfo.swift; sourceTree = "<group>"; };
-		D234F2ED2BF28A9700612030 /* NextState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextState.swift; sourceTree = "<group>"; };
-		D24F2CB72BF3612F00BE823B /* DayInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoCell.swift; sourceTree = "<group>"; };
-		D24F2CB92BF3AE7E00BE823B /* NextStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStateCell.swift; sourceTree = "<group>"; };
+		D234F2E82BF2815A00612030 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		D234F2ED2BF28A9700612030 /* Tommorow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tommorow.swift; sourceTree = "<group>"; };
+		D24F2CB72BF3612F00BE823B /* WeekCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCell.swift; sourceTree = "<group>"; };
+		D24F2CB92BF3AE7E00BE823B /* TommorowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TommorowCell.swift; sourceTree = "<group>"; };
 		D24F2CBB2BF3B19800BE823B /* CompositionalLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayoutSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +80,8 @@
 		D234F2E72BF2812000612030 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D234F2E82BF2815A00612030 /* DayInfo.swift */,
-				D234F2ED2BF28A9700612030 /* NextState.swift */,
+				D234F2E82BF2815A00612030 /* Day.swift */,
+				D234F2ED2BF28A9700612030 /* Tommorow.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -89,8 +89,8 @@
 		D234F2EA2BF289BE00612030 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				D24F2CB72BF3612F00BE823B /* DayInfoCell.swift */,
-				D24F2CB92BF3AE7E00BE823B /* NextStateCell.swift */,
+				D24F2CB72BF3612F00BE823B /* WeekCell.swift */,
+				D24F2CB92BF3AE7E00BE823B /* TommorowCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -166,11 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D234F23D2BF0F7A800612030 /* ViewController.swift in Sources */,
-				D234F2E92BF2815A00612030 /* DayInfo.swift in Sources */,
-				D234F2EE2BF28A9700612030 /* NextState.swift in Sources */,
+				D234F2E92BF2815A00612030 /* Day.swift in Sources */,
+				D234F2EE2BF28A9700612030 /* Tommorow.swift in Sources */,
 				D234F2392BF0F7A800612030 /* AppDelegate.swift in Sources */,
-				D24F2CBA2BF3AE7E00BE823B /* NextStateCell.swift in Sources */,
-				D24F2CB82BF3612F00BE823B /* DayInfoCell.swift in Sources */,
+				D24F2CBA2BF3AE7E00BE823B /* TommorowCell.swift in Sources */,
+				D24F2CB82BF3612F00BE823B /* WeekCell.swift in Sources */,
 				D24F2CBC2BF3B19800BE823B /* CompositionalLayoutSection.swift in Sources */,
 				D234F23B2BF0F7A800612030 /* SceneDelegate.swift in Sources */,
 			);

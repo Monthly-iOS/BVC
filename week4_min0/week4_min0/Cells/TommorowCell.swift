@@ -1,5 +1,5 @@
 //
-//  NextStateCell.swift
+//  TommorowCell.swift
 //  week4_min0
 //
 //  Created by 이민영 on 5/14/24.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class NextStateCell: UICollectionViewCell {
+class TommorowCell: UICollectionViewCell {
     static let identifier = "nextStateCell"
     
-    var nextStateItem: NextState! {
+    var nextStateItem: Tommorow! {
         didSet {
             bindCell(with: nextStateItem)
         }
@@ -336,7 +336,7 @@ class NextStateCell: UICollectionViewCell {
 
     }
     
-    private func bindCell(with item: NextState ) {
+    private func bindCell(with item: Tommorow ) {
         headerTitle.text = "7 days"
         title.text = "Tommorow"
         weather.text = item.weather

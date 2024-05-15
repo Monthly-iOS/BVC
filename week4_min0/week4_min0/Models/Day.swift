@@ -1,5 +1,5 @@
 //
-//  DayInfo.swift
+//  Day.swift
 //  week4_min0
 //
 //  Created by 이민영 on 5/14/24.
@@ -7,57 +7,57 @@
 
 import UIKit
 
-struct DayInfo {
+struct Day {
     let id: UUID = UUID()
     let day, weather, highTemp, lowTemp: String
     let weatherImg: UIImage
 }
 
-let weekInfo: [DayInfo] = [
+let weekInfo: [Day] = [
     
-    DayInfo(
+    Day(
         day: "Mon",
         weather: "Rainy",
         highTemp: "+20°",
         lowTemp: "+14°",
         weatherImg: UIImage(named: "rainy")!
     ),
-    DayInfo(
+    Day(
         day: "The",
         weather: "Rainy",
         highTemp: "+22°",
         lowTemp: "+16°",
         weatherImg: UIImage(named: "rainy.png")!
     ),
-    DayInfo(
+    Day(
         day: "Wed",
         weather: "Storm",
         highTemp: "+19°",
         lowTemp: "+14°",
         weatherImg: UIImage(named: "storm.png")!
     ),
-    DayInfo(
+    Day(
         day: "Thu",
         weather: "Sun",
         highTemp: "+18°",
         lowTemp: "+12°",
         weatherImg: UIImage(named: "sun.png")!
     ),
-    DayInfo(
+    Day(
         day: "Fri",
         weather: "Thunder",
         highTemp: "+23°",
         lowTemp: "+19°",
         weatherImg: UIImage(named: "thunder.png")!
     ),
-    DayInfo(
+    Day(
         day: "Sat",
         weather: "Rainy",
         highTemp: "+25°",
         lowTemp: "+17°",
         weatherImg: UIImage(named: "rainy.png")!
     ),
-    DayInfo(
+    Day(
         day: "Sun",
         weather: "Storm",
         highTemp: "+21°",

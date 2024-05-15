@@ -1,5 +1,5 @@
 //
-//  CurrentState.swift
+//  Tommorow.swift
 //  week4_min0
 //
 //  Created by 이민영 on 5/14/24.
@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-struct NextState {
+struct Tommorow {
     let id = UUID()
     let weatherImg: UIImage
     let highTemp, lowTemp, weather, wind, humidity, chanceOfRain: String
     let windImg, humidImg, chanceRainImg: UIImage
 }
 
-let tommorowItem: [NextState] = [
-    NextState(
+let tommorowItem: [Tommorow] = [
+    Tommorow(
     weatherImg: UIImage(named: "rainy")!,
     highTemp: "20",
     lowTemp: "/17°",

@@ -1,5 +1,5 @@
 //
-//  DayInfoCell.swift
+//  WeekCell.swift
 //  week4_min0
 //
 //  Created by 이민영 on 5/14/24.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-class DayInfoCell: UICollectionViewCell {
+class WeekCell: UICollectionViewCell {
     static let identifier = "dayInfoCell"
     
-    var dayInfoCellItem: DayInfo! {
+    var dayInfoCellItem: Day! {
         didSet {
             bindCell(with: dayInfoCellItem)
         }
@@ -134,7 +134,7 @@ class DayInfoCell: UICollectionViewCell {
         [dayLabel, subStack1, subStack2].forEach { hStack.addArrangedSubview($0) }
     }
     
-    private func bindCell(with item: DayInfo) {
+    private func bindCell(with item: Day) {
         dayLabel.text = item.day
         weatherImageView.image = item.weatherImg
         weather.text = item.weather
@@ -149,7 +149,7 @@ import SwiftUI
 struct FeaturedAppsCollectionView: UIViewRepresentable {
     typealias UIViewType = UIView
     func makeUIView(context: Context) -> UIView {
-        let cell = DayInfoCell()
+        let cell = WeekCell()
         cell.dayInfoCellItem = weekInfo.first!
         return cell
     }
