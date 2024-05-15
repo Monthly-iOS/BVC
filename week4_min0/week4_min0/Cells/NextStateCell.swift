@@ -16,6 +16,16 @@ class NextStateCell: UICollectionViewCell {
         }
     }
     
+    private lazy var emptyLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 25)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .white
+        return label
+    }()
+    
     private lazy var backButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
@@ -23,6 +33,35 @@ class NextStateCell: UICollectionViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.contentHorizontalAlignment = .leading
         return button
+    }()
+    
+    private lazy var headerTitle: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 25)
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .white
+        return label
+    }()
+    
+    private lazy var rightButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "ellipsis"), for: .normal)
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentHorizontalAlignment = .right
+        return button
+    }()
+    
+    private lazy var headerStack: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [backButton, headerTitle, rightButton])
+        stackView.axis = .horizontal // vertical -> vstack
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 50
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private lazy var title: UILabel = {
@@ -151,7 +190,7 @@ class NextStateCell: UICollectionViewCell {
     
     private lazy var windTitle: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -162,7 +201,7 @@ class NextStateCell: UICollectionViewCell {
     
     private lazy var humidTitle: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -173,7 +212,7 @@ class NextStateCell: UICollectionViewCell {
     
     private lazy var rainTitle: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -208,15 +247,8 @@ class NextStateCell: UICollectionViewCell {
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill
-        stackView.spacing = 30
+        stackView.spacing = 40
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    private lazy var headerStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .leading
         return stackView
     }()
     
@@ -264,8 +296,12 @@ class NextStateCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentView.backgroundColor = .systemBlue
+        self.contentView.backgroundColor = UIColor(red: 22/255, green: 179/255, blue: 248/255, alpha: 1.0)
         self.contentView.layer.cornerRadius = 30.0
+        self.contentView.layer.shadowColor = UIColor(red: 22/255, green: 179/255, blue: 248/255, alpha: 1.0).cgColor
+        self.contentView.layer.shadowOpacity = 1
+        self.contentView.layer.shadowRadius = 10
+        self.contentView.layer.shadowOffset = CGSize(width: 0, height: 10)
         configureCell()
     }
     
@@ -276,7 +312,6 @@ class NextStateCell: UICollectionViewCell {
     private func configureCell() {
         contentView.addSubview(containerView)
         containerView.addSubview(vStack)
-        
         NSLayoutConstraint.activate([
             vStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             vStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
@@ -295,17 +330,14 @@ class NextStateCell: UICollectionViewCell {
             hStack3.addArrangedSubview($0)
         }
         
-        [backButton].forEach {
-            headerStack.addArrangedSubview($0)
+        [emptyLabel, headerStack, hStack2, hStack3].forEach {
+            vStack.addArrangedSubview($0)
         }
-        headerStack.alignment = .leading
-        
-        [headerStack, hStack2, hStack3].forEach {
-                   vStack.addArrangedSubview($0)
-               }
+
     }
     
     private func bindCell(with item: NextState ) {
+        headerTitle.text = "7 days"
         title.text = "Tommorow"
         weather.text = item.weather
         weatherImageView.image = item.weatherImg
@@ -320,5 +352,6 @@ class NextStateCell: UICollectionViewCell {
         windTitle.text = "Wind"
         humidTitle.text = "Humidity"
         rainTitle.text = "Chance of rain"
+        
     }
 }
