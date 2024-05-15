@@ -28,22 +28,26 @@
 
 ## 📂 4월 BVC(SwiftUI 뷰 그리기 대회) Repository 폴더 구조
 > week1/week1_양승혜.swift
-## 🗓️ 4월 일정표
+## 🗓️ 4, 5월 일정표
 ||1|2|
 |------|---|---|
 |**1주차 (4.1 ~ 4.14)**|<img width="378" alt="스크린샷 2024-03-31 오후 5 27 40" src="https://github.com/Monthly-iOS/.github/assets/66904886/5a45c81c-91d2-430a-958a-472b553a51e9">|<img width="376" alt="스크린샷 2024-03-31 오후 5 28 10" src="https://github.com/Monthly-iOS/.github/assets/66904886/a47bfb24-bacb-4913-addd-b972ad876fbd">|
 |**2주차 (4.15 ~ 4.28)**|![IMG_9289](https://github.com/Monthly-iOS/.github/assets/66904886/7da9b7c3-aa12-4c0a-a8c6-6e7598d6ad40)|![IMG_9290](https://github.com/Monthly-iOS/.github/assets/66904886/a09e3be0-4742-44ee-8b28-b88ed55d4836)|
+|**3주차 (4.29 ~ 5.6)**|![TalkMedia_i_a47e2af36cb3 jpg](https://github.com/Monthly-iOS/BVC/assets/66904886/d9d2dbf8-90f5-489e-82b7-d5a5a448f8e2)|**UIKit**|
+|**4주차 (5.7 ~ 5.15)**|<img width="1404" alt="TalkMedia_i_b2220c29709a png" src="https://github.com/Monthly-iOS/BVC/assets/66904886/723c9929-6450-4969-b303-9ac56dfd1038">|**UIKit**|
 
 - 참고
    - 1주차 :  [WWIT - 윗 : Lifeplus](https://wwit.design/2021/02/16/lifeplus/)
    - 2주차 : 아이폰 기본 앱 시계 -> 스톱워치
+   - 3주차 : 넷플릭스 메인 화면
 
-## ⭐️ 4월 BVC 멤버 
->  `2024.04.01 ~ 2023.04.28`
 
-|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|<a href="https://github.com/Hminchae"><img src="https://avatars.githubusercontent.com/u/103357078?v=4" width="150px"/></a>|
-| :---: | :---: |
-| 양승혜 | 황민채 |
+## ⭐️ 4, 5월 BVC 멤버 
+>  `2024.04.01 ~ 2024.05.31`
+
+|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|<a href="https://github.com/Hminchae"><img src="https://avatars.githubusercontent.com/u/103357078?v=4" width="150px"/></a>|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|
+| :---: | :---: | :---: | :---: |
+| 양승혜 | 황민채 | 강치우 | 이민영 | 정은수 |
 
 <!--
 
