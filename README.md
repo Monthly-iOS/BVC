@@ -45,8 +45,8 @@
 ## ⭐️ 4, 5월 BVC 멤버 
 >  `2024.04.01 ~ 2024.05.31`
 
-|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|<a href="https://github.com/Hminchae"><img src="https://avatars.githubusercontent.com/u/103357078?v=4" width="150px"/></a>|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|
-| :---: | :---: | :---: | :---: |
+|<a href="https://github.com/vichye-1"><img src="https://avatars.githubusercontent.com/u/66904886?v=4" width="150px"/></a>|<a href="https://github.com/Hminchae"><img src="https://avatars.githubusercontent.com/u/103357078?v=4" width="150px"/></a>|<a href="https://github.com/ha-nabi"><img src="https://avatars.githubusercontent.com/u/112779139?v=4" width="150px"/></a>|<a href="https://github.com/Mminy62"><img src="https://avatars.githubusercontent.com/u/66752398?v=4" width="150px"/></a>|<a href="https://github.com/Eunice0927"><img src="https://avatars.githubusercontent.com/u/106911494?v=4" width="150px"/></a>|
+| :---: | :---: | :---: | :---: | :---: |
 | 양승혜 | 황민채 | 강치우 | 이민영 | 정은수 |
 
 <!--
