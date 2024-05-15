@@ -10,11 +10,11 @@ import UIKit
 class ViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
-
+        
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, rect) -> NSCollectionLayoutSection? in
             
             switch sectionIndex {
-            case 0:return CompositionalLayoutSection.tommorowSection()
+            case 0: return CompositionalLayoutSection.tommorowSection()
             case 1: return CompositionalLayoutSection.weekSection()
             default: return nil
             }
@@ -31,13 +31,9 @@ class ViewController: UIViewController {
     // CollectionView의 constraint 설정
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        title = "7 days"
         view.backgroundColor = .black
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
         setupCollectionView()
+        
     }
     
     func setupCollectionView() {
@@ -51,6 +47,8 @@ class ViewController: UIViewController {
         ])
         
         collectionView.dataSource = self
+        // ignore to safe area
+        collectionView.contentInsetAdjustmentBehavior = .never
         
         collectionView.register(NextStateCell.self, forCellWithReuseIdentifier: NextStateCell.identifier)
         collectionView.register(DayInfoCell.self, forCellWithReuseIdentifier: DayInfoCell.identifier)
@@ -66,7 +64,7 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        
         if section == 1{
             return weekInfo.count
         } else {
