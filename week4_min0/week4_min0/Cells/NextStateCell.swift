@@ -101,7 +101,7 @@ class NextStateCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .white
-        label.layer.opacity = 0.3
+        label.layer.opacity = 0.5
         return label
     }()
     
@@ -112,7 +112,7 @@ class NextStateCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .white
-        label.layer.opacity = 0.3
+        label.layer.opacity = 0.5
         return label
     }()
     
@@ -195,7 +195,7 @@ class NextStateCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .white
-        label.layer.opacity = 0.4
+        label.layer.opacity = 0.5
         return label
     }()
     
@@ -206,7 +206,7 @@ class NextStateCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .white
-        label.layer.opacity = 0.4
+        label.layer.opacity = 0.5
         return label
     }()
     
@@ -217,7 +217,7 @@ class NextStateCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .white
-        label.layer.opacity = 0.4
+        label.layer.opacity = 0.5
         return label
     }()
     
