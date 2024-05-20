@@ -14,7 +14,6 @@ struct Day {
 }
 
 let weekInfo: [Day] = [
-    
     Day(
         day: "Mon",
         weather: "Rainy",
@@ -64,7 +63,4 @@ let weekInfo: [Day] = [
         lowTemp: "+18°",
         weatherImg: UIImage(named: "storm.png")!
     ),
-    
-    
-
 ]

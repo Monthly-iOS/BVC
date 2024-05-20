@@ -47,8 +47,7 @@ class ViewController: UIViewController {
         ])
         
         collectionView.dataSource = self
-        // ignore to safe area
-        collectionView.contentInsetAdjustmentBehavior = .never
+        collectionView.contentInsetAdjustmentBehavior = .never  // ignore to safe area
         
         collectionView.register(TommorowCell.self, forCellWithReuseIdentifier: TommorowCell.identifier)
         collectionView.register(WeekCell.self, forCellWithReuseIdentifier: WeekCell.identifier)
@@ -65,24 +64,22 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if section == 1{
-            return weekInfo.count
-        } else {
+        if section == 0{
             return tommorowItem.count
+        } else {
+            return weekInfo.count
         }
     }
     
     // 셀 등록
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // indexPath: 셀의 위치를 특정
-        
-        if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeekCell.identifier, for: indexPath) as! WeekCell
-            cell.dayInfoCellItem = weekInfo[indexPath.row]
-            return cell
-        } else {
+        if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TommorowCell.identifier, for: indexPath) as! TommorowCell
             cell.nextStateItem = tommorowItem[indexPath.row]
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeekCell.identifier, for: indexPath) as! WeekCell
+            cell.dayInfoCellItem = weekInfo[indexPath.row]
             return cell
         }
         

@@ -30,7 +30,6 @@ class WeekCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
-//        imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +80,6 @@ class WeekCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
-//        stackView.distribution = .fillEqually
         // 한 줄의 아이템 간의 간격
         stackView.spacing = 4
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,10 +88,9 @@ class WeekCell: UICollectionViewCell {
     
     private lazy var subStack2: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .horizontal // vertical -> vstack
+        stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill
-        // 한 줄의 아이템 간의 간격
         stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
