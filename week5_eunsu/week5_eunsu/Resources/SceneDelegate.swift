@@ -18,7 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = TabBarTableViewController()
+        
+        if AuthManager.shared.isSigendIn {
+            window?.rootViewController = TabBarTableViewController()
+        } else {
+            let navVC = UINavigationController(rootViewController: WelcomeViewController())
+            navVC.navigationBar.prefersLargeTitles = true
+            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window?.rootViewController = navVC
+        }
+        
         window?.makeKeyAndVisible()
     }
 
