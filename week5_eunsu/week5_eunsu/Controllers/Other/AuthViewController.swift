@@ -23,6 +23,8 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Sign In"
+        webView.navigationDelegate = self
         setWebView()
         connectWebView()
     }

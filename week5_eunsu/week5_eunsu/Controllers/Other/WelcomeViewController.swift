@@ -23,6 +23,7 @@ class WelcomeViewController: UIViewController {
         view.addSubview(signInButton)
         
         signInButton.backgroundColor = .white
+        signInButton.setTitle("Sign In with Spotify", for: .normal)
         signInButton.setTitleColor(.black, for: .normal)
         signInButton.setTitle("Sign in with Spotify", for: .normal)
         
@@ -30,10 +31,10 @@ class WelcomeViewController: UIViewController {
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             signInButton.widthAnchor.constraint(equalToConstant: view.bounds.width - 40),
-            signInButton.heightAnchor.constraint(equalToConstant: 50)
+            signInButton.heightAnchor.constraint(equalToConstant: 50),
+            signInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
         ])
     }
     

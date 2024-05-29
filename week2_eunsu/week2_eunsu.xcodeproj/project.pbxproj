@@ -11,6 +11,19 @@
 		9E160F812BD771FA0062A3F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F802BD771FA0062A3F3 /* ContentView.swift */; };
 		9E160F832BD771FC0062A3F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E160F822BD771FC0062A3F3 /* Assets.xcassets */; };
 		9E160F862BD771FC0062A3F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E160F852BD771FC0062A3F3 /* Preview Assets.xcassets */; };
+		9E160F8D2BD773080062A3F3 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F8C2BD773080062A3F3 /* Color+Extension.swift */; };
+		9E160F8F2BD7736A0062A3F3 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F8E2BD7736A0062A3F3 /* ClockView.swift */; };
+		9E160F912BD773BF0062A3F3 /* TickShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E160F902BD773BF0062A3F3 /* TickShape.swift */; };
+		9E6DB50C2BD7CCA6001941A0 /* RightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DB50B2BD7CCA6001941A0 /* RightButtonView.swift */; };
+		9EA674572BD7955E005AF9C9 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674562BD7955E005AF9C9 /* NumbersView.swift */; };
+		9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674582BD79C08005AF9C9 /* Font+Extension.swift */; };
+		9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */; };
+		9EA674612BD7A80E005AF9C9 /* LeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674602BD7A80E005AF9C9 /* LeftButtonView.swift */; };
+		9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */; };
+		9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */; };
+		9EA674712BD7B5CB005AF9C9 /* LapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674702BD7B5CB005AF9C9 /* LapItem.swift */; };
+		9EA674732BD7BD24005AF9C9 /* ClockTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674722BD7BD24005AF9C9 /* ClockTimerView.swift */; };
+		9EA674752BD7BDFB005AF9C9 /* NumberTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA674742BD7BDFB005AF9C9 /* NumberTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +32,19 @@
 		9E160F802BD771FA0062A3F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E160F822BD771FC0062A3F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E160F852BD771FC0062A3F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E160F8C2BD773080062A3F3 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		9E160F8E2BD7736A0062A3F3 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		9E160F902BD773BF0062A3F3 /* TickShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickShape.swift; sourceTree = "<group>"; };
+		9E6DB50B2BD7CCA6001941A0 /* RightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightButtonView.swift; sourceTree = "<group>"; };
+		9EA674562BD7955E005AF9C9 /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
+		9EA674582BD79C08005AF9C9 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonStyle.swift; sourceTree = "<group>"; };
+		9EA674602BD7A80E005AF9C9 /* LeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftButtonView.swift; sourceTree = "<group>"; };
+		9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleView.swift; sourceTree = "<group>"; };
+		9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		9EA674702BD7B5CB005AF9C9 /* LapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapItem.swift; sourceTree = "<group>"; };
+		9EA674722BD7BD24005AF9C9 /* ClockTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTimerView.swift; sourceTree = "<group>"; };
+		9EA674742BD7BDFB005AF9C9 /* NumberTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +77,13 @@
 		9E160F7D2BD771FA0062A3F3 /* week2_eunsu */ = {
 			isa = PBXGroup;
 			children = (
-				9E160F7E2BD771FA0062A3F3 /* week2_eunsuApp.swift */,
-				9E160F802BD771FA0062A3F3 /* ContentView.swift */,
+				9E6DB5102BDD0E38001941A0 /* App */,
+				9E6DB5112BDD0E44001941A0 /* Views */,
+				9E6DB5122BDD0E49001941A0 /* Models */,
+				9E6DB5132BDD0E4E001941A0 /* ViewModels */,
+				9E6DB5142BDD0E79001941A0 /* Extensions */,
+				9E6DB5152BDD0EAD001941A0 /* Styles */,
+				9E6DB5162BDD0EB3001941A0 /* Shapes */,
 				9E160F822BD771FC0062A3F3 /* Assets.xcassets */,
 				9E160F842BD771FC0062A3F3 /* Preview Content */,
 			);
@@ -65,6 +96,70 @@
 				9E160F852BD771FC0062A3F3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E6DB5102BDD0E38001941A0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9E160F7E2BD771FA0062A3F3 /* week2_eunsuApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9E6DB5112BDD0E44001941A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9EA674722BD7BD24005AF9C9 /* ClockTimerView.swift */,
+				9E160F8E2BD7736A0062A3F3 /* ClockView.swift */,
+				9E160F802BD771FA0062A3F3 /* ContentView.swift */,
+				9EA674602BD7A80E005AF9C9 /* LeftButtonView.swift */,
+				9EA674662BD7ADE2005AF9C9 /* NeedleView.swift */,
+				9EA674562BD7955E005AF9C9 /* NumbersView.swift */,
+				9EA674742BD7BDFB005AF9C9 /* NumberTimerView.swift */,
+				9E6DB50B2BD7CCA6001941A0 /* RightButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E6DB5122BDD0E49001941A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9EA674702BD7B5CB005AF9C9 /* LapItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E6DB5132BDD0E4E001941A0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9EA6746C2BD7B3E3005AF9C9 /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9E6DB5142BDD0E79001941A0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E160F8C2BD773080062A3F3 /* Color+Extension.swift */,
+				9EA674582BD79C08005AF9C9 /* Font+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9E6DB5152BDD0EAD001941A0 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				9EA6745A2BD79F26005AF9C9 /* ActionButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		9E6DB5162BDD0EB3001941A0 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				9E160F902BD773BF0062A3F3 /* TickShape.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +232,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EA674712BD7B5CB005AF9C9 /* LapItem.swift in Sources */,
 				9E160F812BD771FA0062A3F3 /* ContentView.swift in Sources */,
+				9E160F8F2BD7736A0062A3F3 /* ClockView.swift in Sources */,
+				9E160F8D2BD773080062A3F3 /* Color+Extension.swift in Sources */,
+				9EA674572BD7955E005AF9C9 /* NumbersView.swift in Sources */,
+				9EA674752BD7BDFB005AF9C9 /* NumberTimerView.swift in Sources */,
+				9E160F912BD773BF0062A3F3 /* TickShape.swift in Sources */,
+				9EA6745B2BD79F26005AF9C9 /* ActionButtonStyle.swift in Sources */,
+				9EA674592BD79C08005AF9C9 /* Font+Extension.swift in Sources */,
+				9EA674672BD7ADE2005AF9C9 /* NeedleView.swift in Sources */,
+				9E6DB50C2BD7CCA6001941A0 /* RightButtonView.swift in Sources */,
 				9E160F7F2BD771FA0062A3F3 /* week2_eunsuApp.swift in Sources */,
+				9EA674732BD7BD24005AF9C9 /* ClockTimerView.swift in Sources */,
+				9EA6746D2BD7B3E3005AF9C9 /* ViewModel.swift in Sources */,
+				9EA674612BD7A80E005AF9C9 /* LeftButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +386,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,8 +415,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
