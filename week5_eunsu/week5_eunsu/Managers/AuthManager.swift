@@ -10,6 +10,11 @@ import Foundation
 final class AuthManager {
     static let shared = AuthManager()
     
+    struct Constants {
+        static let clientID = Bundle.main.object(forInfoDictionaryKey: "SPOTIFY_CLIENT_ID") as! String
+        static let privateID = Bundle.main.object(forInfoDictionaryKey: "SPOTIFY_PRIVATE_ID") as! String
+    }
+    
     private init() { }
     
     public var signInURL: URL? {
