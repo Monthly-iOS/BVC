@@ -12,6 +12,15 @@ final class AuthManager {
     
     private init() { }
     
+    public var signInURL: URL? {
+        let baseUrl = "https://accounts.spotify.com/authorize"
+        let scope = "user-read-private"
+        let redirectURI = "https://www.iosacademy.io"
+        let url = "\(baseUrl)?response_type=code&client_id=\(Constants.clientID)&scope=\(scope)&redirect_uri=\(redirectURI)&show_dialog=TRUE"
+        
+        return URL(string: url)
+    }
+    
     var isSigendIn: Bool {
         return false
     }
