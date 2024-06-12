@@ -13,7 +13,9 @@ final class AuthManager {
     
     struct Constants {
         static let clientID = Bundle.main.object(forInfoDictionaryKey: "SPOTIFY_CLIENT_ID") as! String
-        static let privateID = Bundle.main.object(forInfoDictionaryKey: "SPOTIFY_PRIVATE_ID") as! String
+        static let clientSecret = Bundle.main.object(forInfoDictionaryKey: "SPOTIFY_PRIVATE_ID") as! String
+        static let tokenAPIURL = "https://accounts.spotify.com/api/token"
+        static let redirectURI = "http://localhost:8888/callback"
     }
     
     private init() { }
