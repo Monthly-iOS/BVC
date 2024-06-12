@@ -59,4 +59,57 @@ final class AuthManager {
     private var shouldRefreshToken: Bool {
         return false
     }
+    
+    public func exchangeCodeForToken(code: String, completion: @escaping ((Bool) -> Void)) {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "accounts.spotify.com"
+        components.path = "/api/token"
+        components.queryItems = [
+            URLQueryItem(name: "grant_type", value: "authorization_code"),
+            URLQueryItem(name: "code", value: code),
+            URLQueryItem(name: "redirect_uri", value: Constants.redirectURI)
+        ]
+        
+        guard let urlWithComponent = components.url else {
+            print("fail urlWithComponent")
+            return
+        }
+        var request = URLRequest(url: urlWithComponent)
+        
+        request.httpMethod = "POST"
+        let encodedCredentials = "\(Constants.clientID):\(Constants.clientSecret)".data(using: .utf8)!.base64EncodedString()
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("Basic \(encodedCredentials)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(false)
+                print("Error: \(error?.localizedDescription ?? "Undefined Error")")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                print("Failed to optialnal binding response")
+                return
+            }
+            
+            guard response.statusCode == 200 else {
+                print("HTTP Error: \(response.statusCode)")
+                return
+            }
+            
+            do {
+                let tokenResponse = try JSONDecoder().decode(AuthTokenResponse.self, from: data)
+                print("Response Token: \(String(describing: tokenResponse))")
+                completion(true)
+            }
+            catch {
+                print("Error decoding response: \(error.localizedDescription)")
+                completion(false)
+            }
+        }
+        
+        task.resume()
+    }
 }
