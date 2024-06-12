@@ -19,11 +19,29 @@ final class AuthManager {
     
     public var signInURL: URL? {
         let baseUrl = "https://accounts.spotify.com/authorize"
-        let scope = "user-read-private"
-        let redirectURI = "https://www.iosacademy.io"
-        let url = "\(baseUrl)?response_type=code&client_id=\(Constants.clientID)&scope=\(scope)&redirect_uri=\(redirectURI)&show_dialog=TRUE"
+        let scope = "user-read-private user-read-email"
+        let redirectURI = Constants.redirectURI
+        let state = generateRandomString(length: 16)
+        let url = "\(baseUrl)?response_type=code&client_id=\(Constants.clientID)&scope=\(scope)&redirect_uri=\(redirectURI)&state=\(state)&show_dialog=TRUE"
         
         return URL(string: url)
+    }
+    
+    func generateRandomString(length: Int) -> String {
+        let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        var randomString = ""
+        var bytes = [UInt8](repeating: 0, count: length)
+        
+        let result = SecRandomCopyBytes(kSecRandomDefault, length, &bytes)
+        if result == errSecSuccess {
+            for byte in bytes {
+                randomString.append(characters.randomElement()!)
+            }
+        } else {
+            fatalError("Unable to generate random bytes")
+        }
+        
+        return randomString
     }
     
     var isSigendIn: Bool {
