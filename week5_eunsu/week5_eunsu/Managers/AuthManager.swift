@@ -85,7 +85,7 @@ final class AuthManager {
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.addValue("Basic \(encodedCredentials)", forHTTPHeaderField: "Authorization")
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let data = data, error == nil else {
                 completion(false)
                 print("Error: \(error?.localizedDescription ?? "Undefined Error")")
@@ -103,8 +103,8 @@ final class AuthManager {
             }
             
             do {
-                let tokenResponse = try JSONDecoder().decode(AuthTokenResponse.self, from: data)
-                print("Response Token: \(String(describing: tokenResponse))")
+                let tokenResult = try JSONDecoder().decode(AuthTokenResponse.self, from: data)
+                self?.cacheToken(result: tokenResult)
                 completion(true)
             }
             catch {
@@ -114,5 +114,11 @@ final class AuthManager {
         }
         
         task.resume()
+    }
+    
+    private func cacheToken(result: AuthTokenResponse) {
+        UserDefaults.standard.setValue(result.accessToken, forKey: "accessToken")
+        UserDefaults.standard.setValue(result.refreshToken, forKey: "refreshToken")
+        UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expiresIn)), forKey: "expirationDate")
     }
 }
