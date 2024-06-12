@@ -51,9 +51,16 @@ extension AuthViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         guard let url = webView.url else { return }
         
-        //Exchange the code for access token
-        guard let code = URLComponents(string: url.absoluteString)?.queryItems?.first(where: { $0.name == "code"})?.value else { return }
+        //login callback url
+        let queryItems = URLComponents(string: url.absoluteString)?.queryItems
+        guard let code = queryItems?.first(where: { $0.name == "code" })?.value,
+              let state = queryItems?.first(where: { $0.name == "state" })?.value else { return }
         
-        print("Code: \(code)")
+        AuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in
+            DispatchQueue.main.async {
+                self?.navigationController?.popToRootViewController(animated: true)
+                self?.compleationHandler?(success)
+            }
+        }
     }
 }
