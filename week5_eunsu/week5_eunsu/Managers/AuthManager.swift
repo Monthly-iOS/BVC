@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Security
 
 final class AuthManager {
     static let shared = AuthManager()
