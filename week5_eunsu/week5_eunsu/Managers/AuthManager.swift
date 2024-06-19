@@ -12,8 +12,6 @@ enum UserDefaultKeys: String, CaseIterable {
     case accessToken
     case refreshToken
     case expirationDate
-    
-    static let cacheTokens: [UserDefaultKeys] = [accessToken, refreshToken, expirationDate]
 }
 
 final class AuthManager {
@@ -140,18 +138,76 @@ final class AuthManager {
     }
     
     private func cacheToken(result: AuthTokenResponse) {
-        UserDefaultKeys.cacheTokens.forEach { item in
-            if item == .accessToken {
-                UserDefaults.standard.setValue(result.accessToken, forKey: item.rawValue)
+        UserDefaults.standard.setValue(result.accessToken, forKey: UserDefaultKeys.accessToken.rawValue)
+        UserDefaults.standard.setValue(result.refreshToken, forKey: UserDefaultKeys.refreshToken.rawValue)
+        UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expiresIn)), forKey: UserDefaultKeys.expirationDate.rawValue)
+    }
+    
+    private func cacheRefreshToken(result: RefreshTokenResponse) {
+        UserDefaults.standard.setValue(result.accessToken, forKey: UserDefaultKeys.accessToken.rawValue)
+        if let refreshToken = result.refreshToken {
+            UserDefaults.standard.setValue(result.refreshToken, forKey: UserDefaultKeys.refreshToken.rawValue)
+        }
+        UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expiresIn)), forKey: UserDefaultKeys.expirationDate.rawValue)
+    }
+    
+    public func refreshAccessToken(completion: @escaping (Bool) -> Void) {
+        guard shouldRefreshToken else {
+            completion(true)
+            return
+        }
+        
+        guard let refreshToken = self.refreshToken else {
+            print("refreshToken binding failure")
+            return
+        }
+        
+        //Refresh Token
+        guard let url = URL(string: Constants.tokenAPIURL) else {
+            print("url binding failure")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let bodyComponents = [
+            "grant_type": "refresh_token",
+            "refresh_token": refreshToken,
+            "client_id": Constants.clientID,
+            "client_secret": Constants.clientSecret
+        ]
+        
+        request.httpBody = bodyComponents
+            .map { "\($0.key)=\($0.value)" }
+            .joined(separator: "&")
+            .data(using: .utf8)
+        
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error: \(error?.localizedDescription ?? "Unknown error")")
+                completion(false)
+                return
             }
             
-            if item == .refreshToken {
-                UserDefaults.standard.setValue(result.refreshToken, forKey: item.rawValue)
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                print("HTTP Error: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
+                completion(false)
+                return
             }
             
-            if item == .expirationDate {
-                UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expiresIn)), forKey: item.rawValue)
+            do {
+                let refreshTokenResponse = try JSONDecoder().decode(RefreshTokenResponse.self, from: data)
+                self.cacheRefreshToken(result: refreshTokenResponse)
+                completion(true)
+                print("Access Token: \(refreshTokenResponse.accessToken)")
+            } catch {
+                print("Error decoding JSON: \(error.localizedDescription)")
+                completion(false)
             }
         }
+        
+        task.resume()
     }
 }
