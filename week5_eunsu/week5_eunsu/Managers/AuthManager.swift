@@ -74,8 +74,16 @@ final class AuthManager {
         return UserDefaults.standard.object(forKey: userDefaultsKey.rawValue) as? Date
     }
     
+    ///token expire 기한이 5분 이하로 남았는지 확인
     private var shouldRefreshToken: Bool {
-        return false
+        guard let expirationDate = tokenExpireationDate else {
+            print("No expiration date")
+            return false
+        }
+        let currentDate = Date()
+        let fiveMinutes: TimeInterval = 300
+        
+        return currentDate.addingTimeInterval(fiveMinutes) >= expirationDate
     }
     
     public func exchangeCodeForToken(code: String, completion: @escaping ((Bool) -> Void)) {
@@ -132,8 +140,18 @@ final class AuthManager {
     }
     
     private func cacheToken(result: AuthTokenResponse) {
-        UserDefaults.standard.setValue(result.accessToken, forKey: "accessToken")
-        UserDefaults.standard.setValue(result.refreshToken, forKey: "refreshToken")
-        UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expiresIn)), forKey: "expirationDate")
+        UserDefaultKeys.cacheTokens.forEach { item in
+            if item == .accessToken {
+                UserDefaults.standard.setValue(result.accessToken, forKey: item.rawValue)
+            }
+            
+            if item == .refreshToken {
+                UserDefaults.standard.setValue(result.refreshToken, forKey: item.rawValue)
+            }
+            
+            if item == .expirationDate {
+                UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expiresIn)), forKey: item.rawValue)
+            }
+        }
     }
 }
