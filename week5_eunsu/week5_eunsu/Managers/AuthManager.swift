@@ -8,6 +8,14 @@
 import Foundation
 import Security
 
+enum UserDefaultKeys: String, CaseIterable {
+    case accessToken
+    case refreshToken
+    case expirationDate
+    
+    static let cacheTokens: [UserDefaultKeys] = [accessToken, refreshToken, expirationDate]
+}
+
 final class AuthManager {
     static let shared = AuthManager()
     
@@ -48,15 +56,22 @@ final class AuthManager {
     }
     
     var isSigendIn: Bool {
-        return false
+        return accessToken != nil
+    }
+    
+    var accessToken: String? {
+        let userDefaultsKey = UserDefaultKeys.accessToken
+        return UserDefaults.standard.string(forKey: userDefaultsKey.rawValue)
     }
     
     private var refreshToken: String? {
-        return nil
+        let userDefaultsKey = UserDefaultKeys.refreshToken
+        return UserDefaults.standard.string(forKey: userDefaultsKey.rawValue)
     }
     
     private var tokenExpireationDate: Date? {
-        return nil
+        let userDefaultsKey = UserDefaultKeys.expirationDate
+        return UserDefaults.standard.object(forKey: userDefaultsKey.rawValue) as? Date
     }
     
     private var shouldRefreshToken: Bool {
